@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://horo5502.github.io/creator-docs_ja/blog</id>
-    <title>日本語版VRChat CreatorDocs Blog</title>
+    <title>VRChat Creation_ja Blog</title>
     <updated>2021-08-26T00:00:00.000Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://horo5502.github.io/creator-docs_ja/blog"/>
-    <subtitle>日本語版VRChat CreatorDocs Blog</subtitle>
-    <icon>https://horo5502.github.io/creator-docs_ja/img/faviconja.ico</icon>
+    <subtitle>VRChat Creation_ja Blog</subtitle>
+    <icon>https://horo5502.github.io/creator-docs_ja/img/favicon.ico</icon>
     <entry>
         <title type="html"><![CDATA[Welcome]]></title>
         <id>https://horo5502.github.io/creator-docs_ja/blog/welcome</id>

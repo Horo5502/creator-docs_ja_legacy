@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <rss version="2.0" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:content="http://purl.org/rss/1.0/modules/content/">
     <channel>
-        <title>日本語版VRChat CreatorDocs Blog</title>
+        <title>VRChat Creation_ja Blog</title>
         <link>https://horo5502.github.io/creator-docs_ja/blog</link>
-        <description>日本語版VRChat CreatorDocs Blog</description>
+        <description>VRChat Creation_ja Blog</description>
         <lastBuildDate>Thu, 26 Aug 2021 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
