@@ -12,8 +12,8 @@ function HomepageHeader() {
     return (
         <header className={clsx('hero hero--primary', styles.heroBanner)}>
             <div className="container">
-                <h1 className="hero__title">Become a VRChat Creator</h1>
-                <p className="hero__subtitle">{siteConfig.tagline}</p>
+                <h1 className="hero__title">VRChat Creator Docs</h1>
+                <p className="hero__subtitle">日本語版</p>
             </div>
         </header>
     );
@@ -23,8 +23,8 @@ export default function Home() {
     const {siteConfig} = useDocusaurusContext();
     return (
         <Layout
-            title={`Become a VRChat Creator`}
-            description="Learn, create and share using our tools and documentation.">
+            title={`VRChat Creator Docs`}
+            description="日本語版Creator Docs">
             <HomepageHeader />
             <main>
                 <HomepageFeatures />

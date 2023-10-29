@@ -25,7 +25,7 @@ const config = {
   onBrokenLinks: 'ignore',
   onBrokenMarkdownLinks: 'warn',
 
-  trailingSlash: false,
+  trailingSlash: true,
 
   // Even if you don't use internalization, you can use this field to set useful
   // metadata like html lang. For example, if your site is Chinese, you may want
@@ -41,18 +41,22 @@ const config = {
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         docs: {
+          routeBasePath: '/',
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+            'https://github.com/Horo5502/creator-docs_ja',
+          showLastUpdateTime: true
         },
         blog: {
-          showReadingTime: true,
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+          path: 'releases',
+          routeBasePath: 'releases',
+          blogTitle: 'VRChat SDK Releases',
+          blogDescription: 'The latest VRChat SDK releases and patch notes.',
+          showReadingTime: false,
+          blogSidebarTitle: 'History',
+          blogSidebarCount: 'ALL'
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
@@ -80,59 +84,55 @@ const config = {
           src: 'img/logo.png',
         },
         items: [
-          {
-            type: 'docSidebar',
-            sidebarId: 'tutorialSidebar',
-            position: 'left',
-            label: 'Tutorial',
-          },
-          {to: '/blog', label: 'Blog', position: 'left'},
-          {
-            href: 'https://github.com/facebook/docusaurus',
-            label: 'GitHub',
-            position: 'right',
-          },
+          {to: '/worlds', label: 'Worlds', position: 'left'},
+          {to: '/avatars', label: 'Avatars', position: 'left'},
+          {to: '/releases', label: 'Releases', position: 'left'},
+          {to: 'https://udonsharp.docs.vrchat.com', label: 'UdonSharp', position: 'right'},
+          {to: 'https://vcc.docs.vrchat.com', label: 'Creator Companion', position: 'right'},
+          {to: 'https://clientsim.docs.vrchat.com', label: 'ClientSim', position: 'right'},
         ],
       },
       footer: {
         style: 'dark',
         links: [
           {
-            title: 'Docs',
+            // title: 'Docs',
+            title: 'ドキュメント',
             items: [
-              {
-                label: 'Tutorial',
-                to: '/docs/intro',
-              },
+              {to: 'worlds', label: 'Worlds'},
+              {to: 'avatars', label: 'Avatars'},
             ],
           },
           {
-            title: 'Community',
+            // title: 'Tools',
+            title: 'ツール',
+            items: [
+              {to: 'https://udonsharp.docs.vrchat.com', label: 'UdonSharp'},
+              {to: 'https://vcc.docs.vrchat.com', label: 'Creator Companion'},
+              {to: 'https://clientsim.docs.vrchat.com', label: 'ClientSim'},
+            ],
+          },
+          {
+            // title: 'Community',
+            title: 'コミュニティ',
             items: [
               {
-                label: 'Stack Overflow',
-                href: 'https://stackoverflow.com/questions/tagged/docusaurus',
-              },
-              {
                 label: 'Discord',
-                href: 'https://discordapp.com/invite/docusaurus',
+                href: 'https://discord.com/invite/vrchat',
               },
               {
                 label: 'Twitter',
-                href: 'https://twitter.com/docusaurus',
+                href: 'https://twitter.com/vrchat',
               },
             ],
           },
           {
-            title: 'More',
+            // title: 'More',
+            title: 'その他',
             items: [
               {
-                label: 'Blog',
-                to: '/blog',
-              },
-              {
-                label: 'GitHub',
-                href: 'https://github.com/facebook/docusaurus',
+                label: 'Releases',
+                to: '/releases',
               },
             ],
           },
@@ -141,6 +141,7 @@ const config = {
       prism: {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
+        additionalLanguages: ['csharp']
       },
     }),
 };
