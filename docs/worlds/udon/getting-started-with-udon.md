@@ -1,5 +1,5 @@
 ---
-title: "Getting Started with Udon"
+title: "はじめてのUdon"
 slug: "getting-started-with-udon"
 excerpt: "Learn how to get set up to create Udon-powered Worlds in VRChat."
 sidebar_position: 0
@@ -25,7 +25,7 @@ Creator Companionを使ってUdonをはじめるためのステップ:
 2. VRChatアカウントでログインする。もしお持ちでないなら、作成してください。
 
 <!-- 3. Download the Creator Companion and follow its [installation steps](https://vcc.docs.vrchat.com/guides/getting-started).  -->
-Creator Companionをダウンロードし、[インストール手順](https://vcc.docs.vrchat.com/guides/getting-started)に従ってインストールする。
+3. Creator Companionをダウンロードし、[インストール手順](https://vcc.docs.vrchat.com/guides/getting-started)に従ってインストールする。
 
 <!-- 4. Create a new Project by opening the Creator Companion, going to Projects Tab and pressing "New", select the "World" Template. -->
 4. Creator Companionを開き、新規プロジェクトを作成する。Projectsタブへ行き、"New"を押し、"World"テンプレートを選択。
@@ -53,15 +53,22 @@ Udonを始めるためのステップ: (上記の動画でも解説していま�
 1. [VRChatダウンロードページ](https://vrchat.com/home/download)に入る。
 
 <!-- 2. Create a VRChat Account if you don't have one yet. -->
+2. VRChatアカウントでログインする。もしお持ちでないなら、作成してください。
 
-3. Download the SDK.
+<!-- 3. Download the SDK. -->
+3. SDKをダウンロードする。
 
-4. Install Unity Hub and current VRChat-compatible version if you don't have them yet. Check the Android Support box when installing Unity so you can make Quest-compatible worlds. Check the current VRChat compatible version on [this page](/sdk/current-unity-version)
+<!-- 4. Install Unity Hub and current VRChat-compatible version if you don't have them yet. Check the Android Support box when installing Unity so you can make Quest-compatible worlds. Check the current VRChat compatible version on [this page](/sdk/current-unity-version) -->
+4. Unity Hubをインストールし、Unityをお持ちでなければ、現在のVRChat対応バージョンのUnityをインストールしてください。Quest対応ワールド制作の際に必要となるため、Unityのインストール時、Android Supportと書かれたチェックボックスにチェックを入れてください。現在のUnityのVRChat対応バージョンは[こちら](/sdk/current-unity-version)から確認できます。
 
-5. Install VRChat if you don't have it yet.
+<!-- 5. Install VRChat if you don't have it yet. -->
+5. まだVRChatをインストールしていないのであれば、インストールしましょう。
 
-6. Start a new Unity Project.
+<!-- 6. Start a new Unity Project. -->
+6. 新規UnityProjectを作成。
 
-7. Import the SDK.
+<!-- 7. Import the SDK. -->
+7. SDKをインポート。
 
-8. Check out the Readme in Assets/VRChatExamples
+<!-- 8. Check out the Readme in Assets/VRChatExamples -->
+8. 続きは、Assets/VRChatExamples内のReadmeをご覧ください。

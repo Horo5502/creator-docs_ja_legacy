@@ -16,7 +16,7 @@ Udonは、TriggersやActionsと同じことができるだけでなく、独自�
 
 <!-- For the more technically inclined: **VRChat Udon** is a VM running bytecode compiled from **Udon Assembly**. You can generate **Udon Assembly** using the built-in **VRChat Udon Node Graph** UI, writing your own **Udon Assembly**, or even by writing your own compiler to generate **Udon Assembly** or bytecode programs directly. -->
 もっと技術的なことを知りたい方のために:  
-**VRChat Udon**は**Udon Assembly**からコンパイルされたパイトコードを実行するVMです。**Udon Assembly**は、組み込みの**VRChat Udon Node Graph**UIを使用して生成したり、独自の**Udon Assembly**を作成したり、もしくは**Udon Assembly**やバイトコードを直接生成する独自のコンパイラーを作って生成することもできます。
+**VRChat Udon**は**Udon Assembly**からコンパイルされたバイトコードを実行するVMです。**Udon Assembly**は、組み込みの**VRChat Udon Node Graph**UIを使用して生成したり、独自の**Udon Assembly**を作成したり、もしくは**Udon Assembly**やバイトコードを直接生成する独自のコンパイラーを作って生成することもできます。
 
 <!-- ## Current Udon Status -->
 ## 現在のUdonの立ち位置
@@ -32,7 +32,7 @@ Udonは、TriggersやActionsと同じことができるだけでなく、独自�
 <!-- ## How to use Udon -->
 ## Udonの使い方
 <!-- Check out [Getting Started with Udon](/worlds/udon/getting-started-with-udon) ! -->
-[はじめてのUdon](/worlds/udon/getting-started-with-udon)をご覧ください!
+[はじめてのUdon](getting-started-with-udon)をご覧ください!
 
 <!-- If you like Tutorial Videos, you can check out our [Learning Udon](https://www.youtube.com/playlist?list=PLe9XHNvXcouQjg5GULWGLj1tMzeythnQi) Playlist on YouTube, which goes over all the steps to get you up and running. -->
 動画形式で学びたい方は、Youtube上のプレイリスト[Learning Udon](https://www.youtube.com/playlist?list=PLe9XHNvXcouQjg5GULWGLj1tMzeythnQi)をご覧ください。ここには、Udon習得のための全てのステップが網羅されています。
@@ -44,6 +44,6 @@ Udonは、TriggersやActionsと同じことができるだけでなく、独自�
 <!-- ## Bug Reports and Feature Requests -->
 ## バグ報告と機能リクエスト
 <!-- We use Canny across all of VRChat to receive reports of bugs and feature requests. For Udon specifically, use these links: -->
-Cannyを使ってバグ報告や機能リクエストを行うことができます。UdonのCannyリンクはこちらです。
+Cannyを使ってバグ報告や機能リクエストを行うことができます。Udonに関するCannyへのリンクはこちらです。
 * [バグ報告](https://feedback.vrchat.com/vrchat-udon-closed-alpha-bugs)
 * [機能リクエスト](https://feedback.vrchat.com/vrchat-udon-closed-alpha-feedback)

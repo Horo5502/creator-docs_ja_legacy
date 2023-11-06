@@ -30,7 +30,7 @@ VRChatクリエイターとしての旅はここからはじまります!
 ## ワールド作成
 
 <!-- To make a VRChat world, you construct a scene in Unity using typical 3D models, materials and lighting. You can add interactivity with [Udon](/worlds/udon), our custom scripting system. Udon can be built with the visual [Udon Graph](/worlds/udon) or by writing C#-like code using [UdonSharp](https://udonsharp.docs.vrchat.com). You can use our [Networking](/worlds/udon/networking) system to synchronize experiences between players. -->
-VRChatのワールドは、一般的な3Dモデルやマテリアル、ライティングなどをUnityのScene内に配置してつくります。ギミックは、[Udon](/worlds/udon)という、VRChat独自のスクリプトを用いてつくることができます。Udonは、ビジュアルプログラムである[Udon Graph](/worlds/udon)を使用するか、C#ライクに書ける[UdonSharp](https://udonsharp.docs.vrchat.com)を用いて書くことができます。プレイヤー間のギミックやオブジェクトの同期には、VRChatの[ネットワーク](/worlds/udon/networking)システムを使います。
+VRChatのワールドは、一般的な3Dモデルやマテリアル、ライティングなどをUnityのScene内に配置してつくります。ギミックは、[Udon](/worlds/udon)という、VRChat独自のスクリプトを用いてつくることができます。Udonは、ビジュアルプログラムである[Udon Graph](/worlds/udon)を使用するか、C#ライクに書ける[UdonSharp](/worlds/udon/udonsharp)を用いて書くことができます。プレイヤー間のギミックやオブジェクトの同期には、VRChatの[ネットワーク](/worlds/udon/networking)システムを使います。
 
 ## アバター作成
 

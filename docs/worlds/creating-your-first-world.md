@@ -1,5 +1,5 @@
 ---
-title: "Creating Your First World"
+title: "はじめてのワールド作成"
 slug: "creating-your-first-world"
 hidden: false
 sidebar_position: -2

@@ -46,18 +46,27 @@ Avatar3.0は、つけているアバターを制御および操作するため�
 <!-- ## Understanding the Concepts -->
 ## 概念
 
-In order to understand and use Avatars 3.0, you need to know a few concepts. These concepts will help you understand the construction of avatars, how best to assemble them, and the intended use of various systems.
+<!-- In order to understand and use Avatars 3.0, you need to know a few concepts. These concepts will help you understand the construction of avatars, how best to assemble them, and the intended use of various systems. -->
+Avatar3.0を理解し使うためには、いくつかの概念を知る必要があります。これらの概念は、アバターの構造や最適な組み立て方法、様々な機能の用途について理解する助けとなるでしょう。
 
-### Unity Systems
+<!-- ### Unity Systems -->
+### Unityシステム
 
-This document is written with the assumption that you know a bit about [Unity Animators](https://docs.unity3d.com/2019.4/Documentation/Manual/class-AnimatorController.html). In particular, you should ensure you have basic working knowledge of:
+<!-- This document is written with the assumption that you know a bit about [Unity Animators](https://docs.unity3d.com/2019.4/Documentation/Manual/class-AnimatorController.html). In particular, you should ensure you have basic working knowledge of: -->
+このドキュメントは[Unityアニメーター](https://docs.unity3d.com/2019.4/Documentation/Manual/class-AnimatorController.html)についてある程度の知識があることを前提に書かれています。特に、次の基本的な知識について知っているとよいでしょう。
 
-- Animators and animations
-- Animator layers, layer weights, and blending
-- States and transitions
-- Animator parameters
-- State behaviors
-- Avatar masks
+<!-- - Animators and animations -->
+- アニメーターとアニメーション
+<!-- - Animator layers, layer weights, and blending -->
+- アニメーションレイヤー、レイヤーのweight、ブレンド
+<!-- - States and transitions -->
+- ステートとアニメーション遷移
+<!-- - Animator parameters -->
+- アニメーションパラメーター
+<!-- - State behaviors -->
+- State Behavior
+<!-- - Avatar masks -->
+- アバターマスク
 
 It can also help to know about things like:
 

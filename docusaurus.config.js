@@ -72,6 +72,14 @@ const config = {
         defaultMode: 'dark',
         respectPrefersColorScheme: true,
       },
+      announcementBar: {
+        id: 'translationnotyet',
+        content:
+            '<b>このドキュメントは鋭意翻訳中です。正確な情報は英語版をご覧ください。</b>',
+        backgroundColor: '#21af90',
+        textColor: '#000',
+        isCloseable: true,
+      },
       docs: {
         sidebar: {
           autoCollapseCategories: true,
@@ -87,7 +95,7 @@ const config = {
           {to: '/worlds', label: 'Worlds', position: 'left'},
           {to: '/avatars', label: 'Avatars', position: 'left'},
           {to: '/releases', label: 'Releases', position: 'left'},
-          {to: 'https://udonsharp.docs.vrchat.com', label: 'UdonSharp', position: 'right'},
+          {to: '/worlds/udon/udonsharp', label: 'UdonSharp', position: 'right'},
           {to: 'https://vcc.docs.vrchat.com', label: 'Creator Companion', position: 'right'},
           {to: 'https://clientsim.docs.vrchat.com', label: 'ClientSim', position: 'right'},
         ],
@@ -107,7 +115,7 @@ const config = {
             // title: 'Tools',
             title: 'ツール',
             items: [
-              {to: 'https://udonsharp.docs.vrchat.com', label: 'UdonSharp'},
+              {to: '/worlds/udon/udonsharp', label: 'UdonSharp'},
               {to: 'https://vcc.docs.vrchat.com', label: 'Creator Companion'},
               {to: 'https://clientsim.docs.vrchat.com', label: 'ClientSim'},
             ],
