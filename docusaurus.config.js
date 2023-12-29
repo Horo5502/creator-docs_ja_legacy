@@ -6,7 +6,7 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'VRChat Creation_ja',
+  title: 'VRChat CreatorDocs非公式翻訳',
   tagline: 'Learn, create and share using our tools and documentation.',
   favicon: 'img/favicon.ico',
 
@@ -61,6 +61,10 @@ const config = {
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
         },
+        gtag: {
+          trackingID: 'G-EWZ9D3QY7X',
+          anonymizeIP: true,
+        },
       }),
     ],
   ],
@@ -86,7 +90,7 @@ const config = {
         },
       },
       navbar: {
-        title: 'VRChat Creation_ja',
+        title: 'VRChat CreatorDocs非公式翻訳',
         logo: {
           alt: 'VRChat logo_ja',
           src: 'img/logo.png',

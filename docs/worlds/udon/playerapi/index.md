@@ -99,17 +99,21 @@ out: *Boolean*
 * CombatSetRespawn
 * CombatSetup
 
-## Language
+<!-- ## Language -->
+## 言語
 :::note
 
-Switching Languages is not yet ready in the VRChat client, these methods will return example data until the full feature is launched. They will currently throw an exception when testing in ClientSim, as well.
+<!-- Switching Languages is not yet ready in the VRChat client, these methods will return example data until the full feature is launched. They will currently throw an exception when testing in ClientSim, as well. -->
+VRChatクライアントでは他言語サポートがまだ行われていないため、これらのメソッドはサンプルデータを返します。ClientSimでテストする際にも例外がスローされます。
 
 :::
 
 ### GetCurrentLanguage
-*string*
-Gets the selected language of the local user.
+*string*  
+<!-- Gets the selected language of the local user. -->
+ローカルユーザーの設定している言語を取得する
 
 ### GetAvailableLanguages
-*string[]*
-Gets all available languages a player can select.
+*string[]*  
+<!-- Gets all available languages a player can select. -->
+プレイヤーが選択できる全ての利用可能言語を取得する。

@@ -5,7 +5,8 @@
 <!-- All supported attributes in UdonSharp -->
 UdonSharpでサポートされている全ての属性
 
-| | Attribute | | 
+<!-- | | Attribute | |  -->
+| | 属性 | | 
 |--- | --- | --- |
 |[Header](https://docs.unity3d.com/ScriptReference/HeaderAttribute.html)|[HideInInspector](https://docs.unity3d.com/ScriptReference/HideInInspector.html)|[NonSerialized](https://docs.microsoft.com/dotnet/api/system.nonserializedattribute)|
 |[SerializeField](https://docs.unity3d.com/ScriptReference/SerializeField.html)|[Space](https://docs.unity3d.com/ScriptReference/SpaceAttribute.html)|[Tooltip](https://docs.unity3d.com/ScriptReference/TooltipAttribute.html)|
@@ -56,9 +57,10 @@ public class Example : UdonSharpBehaviour
 `[UdonBehaviourSyncMode]` / `[UdonBehaviourSyncMode(BehaviourSyncMode)]`
 
 <!-- Enforces a chosen sync mode and performs additional validation on synced variables where appropriate. -->
-指定された同期モードを強制し、performs additional validation on synced variables where appropriate.
+指定された同期モードを強制し、必要に応じて同期変数に対して追加の検証を行います。
 
-### Example
+<!-- ### Example -->
+### 例
 ```cs
 [UdonBehaviourSyncMode(BehaviourSyncMode.Manual)]
 public class Example : UdonSharpBehaviour 
@@ -69,15 +71,24 @@ public class Example : UdonSharpBehaviour
 ### BehaviourSyncMode
 `UdonSharp.BehaviourSyncMode`
 
-| Name | Summary |
+<!-- | Name | Summary |
 | --- | --- |
 | Any | Nothing is enforced and the behaviours can be set to either sync type by the user. This is the default when no attribute is specified. |
 | None | Enforces no synced variables on the behaviour and hides the selection dropdown in the UI for the sync mode. Nothing is synced and SendCustomNetworkEvent will not work on the behaviour. |
 | Continuous | Synced variables will be updated automatically at a very frequent rate, but may not always reliably update to save bandwidth. |
 | Manual | Synced variables are updated manually by the user less frequently, but ensures that updates are reliable when requested. |
-| NoVariableSync | Enforces that there are no synced variables on the behaviour, hides the sync mode selection dropdown, and allows you to use the behaviours on GameObjects that use either Manual or Continuous sync. |
+| NoVariableSync | Enforces that there are no synced variables on the behaviour, hides the sync mode selection dropdown, and allows you to use the behaviours on GameObjects that use either Manual or Continuous sync. | -->
+
+| Name | 概要 |
+| --- | --- |
+| Any | モードを強制せず、ユーザーが同期モードの設定を行うことができます。属性が指定されていない場合のデフォルトです。 |
+| None | 変数同期を行わないことを強制し、UI上の同期モードを選ぶドロップダウンを非表示にします。何も同期されず、SendCustomNetworkEventは機能しません。 |
+| Continuous | 同期変数は自動的に、非常に高い頻度で更新されますが、帯域幅の制限のため常に確実に更新されるとは限りません。 |
+| Manual | 同期変数はユーザーが手動で更新します。同期頻度は低いですが、更新を要求した場合は確実に行われます。 |
+| NoVariableSync | behaviour内に同期変数がないことを強制し、同期モードのドロップダウンを非表示にします。Manual同期かContinuous同期を使用するGameObjectsのbehaviourを使うことができます。 |
 
 ## DefaultExecutionOrder
+
 
 Specifies the order that Update, LateUpdate, and FixedUpdate happen in relative to other UdonSharpBehaviours with an int. All behaviours are at 0 by default, the lower the int, the earlier their update happens. The int can be negative.
 

@@ -36,7 +36,10 @@ Udonは、TriggersやActionsと同じことができるだけでなく、独自�
 
 <!-- If you like Tutorial Videos, you can check out our [Learning Udon](https://www.youtube.com/playlist?list=PLe9XHNvXcouQjg5GULWGLj1tMzeythnQi) Playlist on YouTube, which goes over all the steps to get you up and running. -->
 動画形式で学びたい方は、Youtube上のプレイリスト[Learning Udon](https://www.youtube.com/playlist?list=PLe9XHNvXcouQjg5GULWGLj1tMzeythnQi)をご覧ください。ここには、Udon習得のための全てのステップが網羅されています。
-<iframe class="embedly-embed" src="//cdn.embedly.com/widgets/media.html?src=http%3A%2F%2Fwww.youtube.com%2Fembed%2Fvideoseries%3Flist%3DPLe9XHNvXcouQjg5GULWGLj1tMzeythnQi&display_name=YouTube&url=https%3A%2F%2Fwww.youtube.com%2Fplaylist%3Flist%3DPLe9XHNvXcouQjg5GULWGLj1tMzeythnQi&image=https%3A%2F%2Fi.ytimg.com%2Fvi%2F8gXzBTqlP6I%2Fhqdefault.jpg%3Fsqp%3D-oaymwEWCKgBEF5IWvKriqkDCQgBFQAAiEIYAQ%3D%3D%26rs%3DAOn4CLDEoE6be2bvFU9le9GXGstXJO0nfg&key=f2aa6fc3595946d0afc3d76cbbd25dc3&type=text%2Fhtml&schema=youtube" width="853" height="480" scrolling="no" title="YouTube embed" frameborder="0" allow="autoplay; fullscreen" allowfullscreen="true"></iframe>
+<!-- <iframe class="embedly-embed" src="//cdn.embedly.com/widgets/media.html?src=http%3A%2F%2Fwww.youtube.com%2Fembed%2Fvideoseries%3Flist%3DPLe9XHNvXcouQjg5GULWGLj1tMzeythnQi&display_name=YouTube&url=https%3A%2F%2Fwww.youtube.com%2Fplaylist%3Flist%3DPLe9XHNvXcouQjg5GULWGLj1tMzeythnQi&image=https%3A%2F%2Fi.ytimg.com%2Fvi%2F8gXzBTqlP6I%2Fhqdefault.jpg%3Fsqp%3D-oaymwEWCKgBEF5IWvKriqkDCQgBFQAAiEIYAQ%3D%3D%26rs%3DAOn4CLDEoE6be2bvFU9le9GXGstXJO0nfg&key=f2aa6fc3595946d0afc3d76cbbd25dc3&type=text%2Fhtml&schema=youtube" width="853" height="480" scrolling="no" title="YouTube embed" frameborder="0" allow="autoplay; fullscreen" allowfullscreen="true"></iframe> -->
+<div class="video-container">
+    <iframe src="https://www.youtube-nocookie.com/embed/8gXzBTqlP6I?si=szRiEh57ZmN51oDK" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" width="853" height="480" allowfullscreen></iframe>
+</div>
 
 <!-- If you'd rather read the steps directly, then read our [Getting Started with Udon](/worlds/udon/getting-started-with-udon) page. -->
 文章形式で学びたい方は、[はじめてのUdon](/worlds/udon/getting-started-with-udon)をご覧ください。
