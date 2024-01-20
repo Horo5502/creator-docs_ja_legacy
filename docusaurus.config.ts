@@ -3,30 +3,33 @@ import type {Config} from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 
 const config: Config = {
-  title: 'My Site',
-  tagline: 'Dinosaurs are cool',
+  title: 'VRChat CreatorDocs非公式翻訳',
+  tagline: 'Learn, create and share using our tools and documentation.',
   favicon: 'img/favicon.ico',
 
   // Set the production url of your site here
-  url: 'https://your-docusaurus-site.example.com',
+  url: 'https://horo5502.github.io',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: '/',
+  baseUrl: '/creator-docs_ja/',
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'facebook', // Usually your GitHub org/user name.
-  projectName: 'docusaurus', // Usually your repo name.
+  organizationName: 'Horo5502', // Usually your GitHub org/user name.
+  projectName: 'creator-docs_ja', // Usually your repo name.
 
-  onBrokenLinks: 'throw',
+  // !!!
+  onBrokenLinks: 'ignore',
   onBrokenMarkdownLinks: 'warn',
+
+  trailingSlash: true,
 
   // Even if you don't use internationalization, you can use this field to set
   // useful metadata like html lang. For example, if your site is Chinese, you
   // may want to replace "en" with "zh-Hans".
   i18n: {
-    defaultLocale: 'en',
-    locales: ['en'],
+    defaultLocale: 'ja',
+    locales: ['ja'],
   },
 
   presets: [
@@ -34,98 +37,118 @@ const config: Config = {
       'classic',
       {
         docs: {
+          routeBasePath: '/',
           sidebarPath: './sidebars.ts',
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+            'https://github.com/Horo5502/creator-docs_ja',
+          showLastUpdateTime: true
         },
         blog: {
-          showReadingTime: true,
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+          path: 'releases',
+          routeBasePath: 'releases',
+          blogTitle: 'VRChat SDK Releases',
+          blogDescription: 'The latest VRChat SDK releases and patch notes.',
+          showReadingTime: false,
+          blogSidebarTitle: 'History',
+          blogSidebarCount: 'ALL',
         },
         theme: {
           customCss: './src/css/custom.css',
+        },
+        gtag: {
+          trackingID: 'G-EWZ9D3QY7X',
+          anonymizeIP: true,
         },
       } satisfies Preset.Options,
     ],
   ],
 
   themeConfig: {
-    // Replace with your project's social card
-    image: 'img/docusaurus-social-card.jpg',
+    image: 'img/social-card.png',
+    colorMode: {
+      defaultMode: 'dark',
+      respectPrefersColorScheme: true,
+    },
+    announcementBar: {
+      id: 'translationnotyet',
+      content:
+          '<b>このドキュメントは鋭意翻訳中です。正確な情報は英語版をご覧ください。</b>',
+      backgroundColor: '#21af90',
+      textColor: '#000',
+      isCloseable: true,
+    },
+    docs: {
+      sidebar: {
+        autoCollapseCategories: false,
+      },
+    },
     navbar: {
-      title: 'My Site',
+      title: 'VRChat CreatorDocs非公式翻訳',
       logo: {
-        alt: 'My Site Logo',
-        src: 'img/logo.svg',
+        alt: 'VRChat logo_ja',
+        src: 'img/logo.png',
       },
       items: [
-        {
-          type: 'docSidebar',
-          sidebarId: 'tutorialSidebar',
-          position: 'left',
-          label: 'Tutorial',
-        },
-        {to: '/blog', label: 'Blog', position: 'left'},
-        {
-          href: 'https://github.com/facebook/docusaurus',
-          label: 'GitHub',
-          position: 'right',
-        },
+        {to: '/worlds', label: 'Worlds', position: 'left'},
+        {to: '/avatars', label: 'Avatars', position: 'left'},
+        {to: '/releases', label: 'Releases', position: 'left'},
+        {to: '/worlds/udonsharp', label: 'UdonSharp', position: 'right'},
+        {to: 'https://vcc.docs.vrchat.com', label: 'Creator Companion', position: 'right'},
+        {to: 'https://clientsim.docs.vrchat.com', label: 'ClientSim', position: 'right'},
       ],
     },
     footer: {
       style: 'dark',
       links: [
         {
-          title: 'Docs',
+          // title: 'Docs',
+          title: 'ドキュメント',
           items: [
-            {
-              label: 'Tutorial',
-              to: '/docs/intro',
-            },
+            {to: 'worlds', label: 'Worlds'},
+            {to: 'avatars', label: 'Avatars'},
           ],
         },
         {
-          title: 'Community',
+          // title: 'Tools',
+          title: 'ツール',
+          items: [
+            {to: '/worlds/udonsharp', label: 'UdonSharp'},
+            {to: 'https://vcc.docs.vrchat.com', label: 'Creator Companion'},
+            {to: 'https://clientsim.docs.vrchat.com', label: 'ClientSim'},
+          ],
+        },
+        {
+          // title: 'Community',
+          title: 'コミュニティ',
           items: [
             {
-              label: 'Stack Overflow',
-              href: 'https://stackoverflow.com/questions/tagged/docusaurus',
-            },
-            {
               label: 'Discord',
-              href: 'https://discordapp.com/invite/docusaurus',
+              href: 'https://discord.com/invite/vrchat',
             },
             {
               label: 'Twitter',
-              href: 'https://twitter.com/docusaurus',
+              href: 'https://twitter.com/vrchat',
             },
           ],
         },
         {
-          title: 'More',
+          // title: 'More',
+          title: 'その他',
           items: [
             {
-              label: 'Blog',
-              to: '/blog',
-            },
-            {
-              label: 'GitHub',
-              href: 'https://github.com/facebook/docusaurus',
+              label: 'Releases',
+              to: '/releases',
             },
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
     },
     prism: {
       theme: prismThemes.github,
       darkTheme: prismThemes.dracula,
+      additionalLanguages: ['csharp']
     },
   } satisfies Preset.ThemeConfig,
 };

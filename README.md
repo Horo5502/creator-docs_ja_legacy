@@ -1,6 +1,16 @@
+Github Pages: https://horo5502.github.io/creator-docs_ja/
+
+# What is this?
+[VRChat公式クリエイタードキュメント](https://creators.vrchat.com/)を**非公式に**翻訳したものです。
+翻訳途中なので、まだ翻訳されていないページもあります。未翻訳のページは表示されないはずです。
+
+[公式ドキュメントのGithub](https://github.com/vrchat-community/creator-docs)
+
+---
+以下DocusaurusのREADME
 # Website
 
-This website is built using [Docusaurus](https://docusaurus.io/), a modern static website generator.
+This website is built using [Docusaurus 2](https://docusaurus.io/), a modern static website generator.
 
 ### Installation
 
