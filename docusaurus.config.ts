@@ -39,10 +39,6 @@ const config: Config = {
         docs: {
           routeBasePath: '/',
           sidebarPath: './sidebars.ts',
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/Horo5502/creator-docs_ja',
           showLastUpdateTime: true
         },
         blog: {
@@ -93,10 +89,10 @@ const config: Config = {
       items: [
         {to: '/worlds', label: 'Worlds', position: 'left'},
         {to: '/avatars', label: 'Avatars', position: 'left'},
-        {to: '/releases', label: 'Releases', position: 'left'},
+        // {to: '/releases', label: 'Releases', position: 'left'},
         {to: '/worlds/udonsharp', label: 'UdonSharp', position: 'right'},
-        {to: 'https://vcc.docs.vrchat.com', label: 'Creator Companion', position: 'right'},
-        {to: 'https://clientsim.docs.vrchat.com', label: 'ClientSim', position: 'right'},
+        {to: '/vcc', label: 'Creator Companion', position: 'right'},
+        {to: '/clientsim', label: 'ClientSim', position: 'right'},
       ],
     },
     footer: {
@@ -141,6 +137,10 @@ const config: Config = {
               label: 'Releases',
               to: '/releases',
             },
+            {
+              label: 'プライバシーポリシー',
+              to: '/privacy-policy'
+            }
           ],
         },
       ],
