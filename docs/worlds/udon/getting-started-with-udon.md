@@ -3,9 +3,9 @@ title: "はじめてのUdon"
 slug: "getting-started-with-udon"
 excerpt: "Learn how to get set up to create Udon-powered Worlds in VRChat."
 sidebar_position: 0
-hidden: false
 createdAt: "2023-10-29T17:20:46"
 ---
+# はじめてのUdon
 <!-- If you don't know what Udon is, read [What is Udon](/worlds/udon) first.  -->
 Udonがなにか分からない方は、[Udonとは何か](/worlds/udon)を先にお読みください。
 

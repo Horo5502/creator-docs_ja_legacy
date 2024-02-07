@@ -1,9 +1,9 @@
 ---
 title: "Avatars"
 excerpt: "Learn about VRChat's Avatars 3.0 SDK"
-hidden: false
 sidebar_position: 0
 ---
+# Avatars
 
 <!-- VRChat allows you to create and upload custom avatars! -->
 VRChatではオリジナルのアバターを作ってアップロードすることができます!
