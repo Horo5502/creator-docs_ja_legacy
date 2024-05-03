@@ -5,67 +5,42 @@ sidebar_position: 0
 ---
 # Avatars
 
-<!-- VRChat allows you to create and upload custom avatars! -->
 VRChatではオリジナルのアバターを作ってアップロードすることができます!
 
-<!-- # Creating Avatars -->
 # アバター作成
 
-<!-- To get started, check out [Creating your first avatar](/avatars/creating-your-first-avatar). -->
 最初に、[はじめてのアバター作成](/avatars/creating-your-first-avatar)をご覧ください。
-<!-- There's a whole 'Avatars' category on the sidebar to check out. Here are some of the more impactful and important pages: -->
 サイドバーに「Avatars」カテゴリーがありますので、そちらもご覧ください。 下に、特に重要なページをいくつか紹介します:
 
-<!-- - [Rig Requirements](/avatars/rig-requirements) explains how to set up your custom 3D model's hierarchy for VRChat. -->
 - [リグの要件](/avatars/rig-requirements)では、3Dモデルのヒエラルキーのセットアップ方法が解説されています。
-<!-- - [Avatar Performance Ranking System](/avatars/avatar-performance-ranking-system) explains how some avatars achieve an 'Excellent' performance, and others 'Very Poor'. -->
 - [アバターパフォーマンスランク](/avatars/avatar-performance-ranking-system)では、どのようにしてアバターが'Excellent'ランクになるか、または'Very Poor'ランクになるかが解説されています。
-<!-- - [Avatar Optimization Tips](/avatars/avatar-optimizing-tips) - Now that you know _why_, check out this page to learn how to get all your frames back. -->
-<!-- あんまり英文の意味が分からなかった -->
 - [アバターの最適化](/avatars/avatar-optimizing-tips) - _理由_を知ったなら、次はそれを実行に移しましょう。
-<!-- - Continue reading this page to learn more about important Avatars 3.0 SDK concepts. -->
 - Avatar3.0 SDKの重要な概念について詳しく知りたい方は、このページを読み進めてください。
 
-<!-- ## What is Avatars 3.0? -->
 ## Avatar3.0とは?
 
-<!-- **Avatars 3.0** is our name for all the features available for avatars in VRChat. AV3's features are focused on improving expression, performance, and the abilities of avatars in VRChat. -->
 **Avatar3.0**はVRChatのアバターで利用可能なすべての機能の名前です。AV3の機能は、VRChatにおけるアバターの表現力、パフォーマンス、能力の向上に重点が置かれています。
 
-<!-- Avatars 3.0 is heavily integrated with the [Action Menu](https://docs.vrchat.com/docs/action-menu) for controlling and interacting with the avatar you're wearing. It's probably best if you hop in and try out the Action Menu before building an AV3 avatar! -->
 Avatar3.0は、つけているアバターを制御および操作するための[アクションメニュー](https://docs.vrchat.com/docs/action-menu)と高度に統合されています。AV3アバターをつくってみる前に、アクションメニューに触れてみるとよいかもしれません。
 
-<!-- ## Prerequisites -->
 ## 前提条件
 
-<!-- - [Install & set up the VRChat Avatars SDK](/sdk) -->
 - [VRChat Avatars SDKをインストール&セットアップ](/sdk)
-<!-- - [Create your first avatar](/avatars/creating-your-first-avatar) -->
 - [はじめてのアバター作成](/avatars/creating-your-first-avatar)
 
-<!-- ## Understanding the Concepts -->
 ## 概念
 
-<!-- In order to understand and use Avatars 3.0, you need to know a few concepts. These concepts will help you understand the construction of avatars, how best to assemble them, and the intended use of various systems. -->
 Avatar3.0を理解し使うためには、いくつかの概念を知る必要があります。これらの概念は、アバターの構造や最適な組み立て方法、様々な機能の用途について理解する助けとなるでしょう。
 
-<!-- ### Unity Systems -->
 ### Unityシステム
 
-<!-- This document is written with the assumption that you know a bit about [Unity Animators](https://docs.unity3d.com/2019.4/Documentation/Manual/class-AnimatorController.html). In particular, you should ensure you have basic working knowledge of: -->
 このドキュメントは[Unityアニメーター](https://docs.unity3d.com/2019.4/Documentation/Manual/class-AnimatorController.html)についてある程度の知識があることを前提に書かれています。特に、次の基本的な知識について知っているとよいでしょう。
 
-<!-- - Animators and animations -->
 - アニメーターとアニメーション
-<!-- - Animator layers, layer weights, and blending -->
 - アニメーションレイヤー、レイヤーのweight、ブレンド
-<!-- - States and transitions -->
 - ステートとアニメーション遷移
-<!-- - Animator parameters -->
 - アニメーションパラメーター
-<!-- - State behaviors -->
 - State Behavior
-<!-- - Avatar masks -->
 - アバターマスク
 
 It can also help to know about things like:

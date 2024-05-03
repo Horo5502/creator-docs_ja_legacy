@@ -1,11 +1,8 @@
 # UdonSharp
 
-<!-- # Attributes -->
 # 属性
-<!-- All supported attributes in UdonSharp -->
 UdonSharpでサポートされている全ての属性
 
-<!-- | | Attribute | |  -->
 | | 属性 | | 
 |--- | --- | --- |
 |[Header](https://docs.unity3d.com/ScriptReference/HeaderAttribute.html)|[HideInInspector](https://docs.unity3d.com/ScriptReference/HideInInspector.html)|[NonSerialized](https://docs.microsoft.com/dotnet/api/system.nonserializedattribute)|
@@ -18,10 +15,8 @@ UdonSharpでサポートされている全ての属性
 ## UdonSynced
 `[UdonSynced]` / `[UdonSynced(UdonSyncMode)]`
 
-<!-- *See [Synced Variables](/vrchat-api#synced-variables) for variables that can be synced.* -->
 *同期可能な変数の一覧は[Synced Variables](/worlds/udonsharp/documentation/vrchat-api#synced-variables)をご覧ください。
 
-<!-- ### Example -->
 ### 例
 ```cs
 public class Example : UdonSharpBehaviour 
@@ -39,7 +34,6 @@ public class Example : UdonSharpBehaviour
 ### UdonSyncMode
 `UdonSharp.UdonSyncMode`
 
-<!-- | Name | Summary |
 | --- | --- |
 | NotSynced | |
 | None | No interpolation (Default) |
@@ -56,10 +50,8 @@ public class Example : UdonSharpBehaviour
 ## UdonBehaviourSyncMode
 `[UdonBehaviourSyncMode]` / `[UdonBehaviourSyncMode(BehaviourSyncMode)]`
 
-<!-- Enforces a chosen sync mode and performs additional validation on synced variables where appropriate. -->
 指定された同期モードを強制し、必要に応じて同期変数に対して追加の検証を行います。
 
-<!-- ### Example -->
 ### 例
 ```cs
 [UdonBehaviourSyncMode(BehaviourSyncMode.Manual)]
@@ -71,7 +63,6 @@ public class Example : UdonSharpBehaviour
 ### BehaviourSyncMode
 `UdonSharp.BehaviourSyncMode`
 
-<!-- | Name | Summary |
 | --- | --- |
 | Any | Nothing is enforced and the behaviours can be set to either sync type by the user. This is the default when no attribute is specified. |
 | None | Enforces no synced variables on the behaviour and hides the selection dropdown in the UI for the sync mode. Nothing is synced and SendCustomNetworkEvent will not work on the behaviour. |

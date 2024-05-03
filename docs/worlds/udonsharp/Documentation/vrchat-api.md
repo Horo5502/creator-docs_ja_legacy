@@ -1,11 +1,9 @@
 # VRChat API
 
 ## API
-<!-- ### Methods -->
 ### メソッド
 * [VRCInstantiate](#vrcinstantiate)
 
-<!-- ### Classes -->
 ### クラス
 * [Utilities](#utilities)
 * [VRCStation](#vrcstation)
@@ -25,7 +23,6 @@
 * [VRCPickup](#vrcpickup)
 * [VRCPortalMarker](#vrcportalmarker)
 
-<!-- ### Enums -->
 ### Enum
 * [EventTiming](#eventtiming)
 * [Mobility](#mobility)
@@ -40,13 +37,11 @@
 * [PickupOrientation](#pickuporientation)
 * [PickupHand](#pickuphand)
 
-<!-- ## Supported Features -->
 ## サポートされている機能
 * [Synced Variables](#synced-variables)
 
 ---
 
-<!-- ## Methods -->
 ## メソッド
 
 ### VRCInstantiate
@@ -55,14 +50,11 @@
 | ✔️ | [GameObject](https://docs.unity3d.com/ScriptReference/GameObject.html) | VRCInstantiate([GameObject](https://docs.unity3d.com/ScriptReference/GameObject.html) original) | オブジェクトの、ローカルで非同期なコピーを作ります。 詳細な情報は [こちら](https://docs.unity3d.com/ScriptReference/Object.Instantiate.html) をご覧ください。 |
 
 
-<!-- ## Classes -->
 ## クラス
 
-<!-- ### Utilities -->
 ### ユーティリティ {#utilities}
 `static class VRC.SDKBase.Utilities`
 
-<!-- #### Methods -->
 #### メソッド
 | Static | Returns | Name | 概要 |
 | :---: | --- | --- | --- |
@@ -72,7 +64,6 @@
 ### VRCStation
 `class VRC.SDK3.Components.VRCStation` / `class VRC.SDKBase.VRCStation`
 
-<!-- #### Properties -->
 #### プロパティ
 | Type | Name | Summary |
 | --- | --- | --- |

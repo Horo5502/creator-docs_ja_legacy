@@ -1,9 +1,7 @@
 ---
 title: "コミュニティー資料"
 ---
-<!-- # Community Resources -->
 
-<!-- ## Tutorials and info -->
 ## チュートリアル情報
 
 ### はつぇさんのブログ
@@ -17,14 +15,12 @@ title: "コミュニティー資料"
 
 ### Vowgan's Tutorial Videos
 
-<!-- These videos start with the graph in the first half and cover U# in the second half -->
 これらの動画は前半はUdon Graphから始まり、後半でU#についても解説しています。
 - [VRChat Udon Tutorial | Basic Buttons](https://www.youtube.com/watch?v=GWv3zloRWY4)
 - (訳注: 上の動画は古いです。[新しいチュートリアル動画](https://youtu.be/ibDu0dCeUE8))
 - [VRChat Udon Tutorial | Contextual Buttons](https://www.youtube.com/watch?v=01a5qO60qlo)
 - [VRChat Udon Tutorial | Jumping and PlayerMods](https://www.youtube.com/watch?v=OventaglGCY)
 
-<!-- ## Tools -->
 ## ツール
 ### orels1's UdonToolKit
 Provides a number of useful utility behaviours and a much more powerful attribute system for making custom inspectors for your U# behaviours.
