@@ -89,6 +89,7 @@ const config: Config = {
       items: [
         {to: '/worlds', label: 'Worlds', position: 'left'},
         {to: '/avatars', label: 'Avatars', position: 'left'},
+        {to: '/about-this-site', label: 'このサイトについて', position: 'left'},
         // {to: '/releases', label: 'Releases', position: 'left'},
         {to: '/worlds/udonsharp', label: 'UdonSharp', position: 'right'},
         {to: '/vcc', label: 'Creator Companion', position: 'right'},
@@ -111,8 +112,8 @@ const config: Config = {
           title: 'ツール',
           items: [
             {to: '/worlds/udonsharp', label: 'UdonSharp'},
-            {to: 'https://vcc.docs.vrchat.com', label: 'Creator Companion'},
-            {to: 'https://clientsim.docs.vrchat.com', label: 'ClientSim'},
+            {to: '/vcc', label: 'Creator Companion'},
+            {to: '/clientsim', label: 'ClientSim'},
           ],
         },
         {
@@ -133,13 +134,17 @@ const config: Config = {
           // title: 'More',
           title: 'その他',
           items: [
-            {
-              label: 'Releases',
-              to: '/releases',
-            },
+            // {
+            //   label: 'Releases',
+            //   to: '/releases',
+            // },
             {
               label: 'プライバシーポリシー',
               to: '/privacy-policy'
+            },
+            {
+              label: 'このサイトのGitHub',
+              href: 'https://github.com/horo5502/creator-docs_ja'
             }
           ],
         },

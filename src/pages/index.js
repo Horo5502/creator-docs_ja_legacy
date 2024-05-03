@@ -13,7 +13,7 @@ function HomepageHeader() {
         <header className={clsx('hero hero--primary', styles.heroBanner)}>
             <div className="container">
                 <h1 className="hero__title">VRChat Creator Docs</h1>
-                <p className="hero__subtitle">日本語版</p>
+                <p className="hero__subtitle">非公式日本語翻訳</p>
             </div>
         </header>
     );

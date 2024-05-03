@@ -10,9 +10,9 @@ VRChatでは、ワールドを作ったり、他のユーザーが作成した�
 ワールド作成のはじめの一歩として、[はじめてのワールド作成](creating-your-first-world)をご覧ください。
 
 <!-- - [Allowed World Components](docs/worlds/whitelisted-world-components)  -->
+<!-- - [World Creation, Optimization, and Community Labs Tips](docs/worlds/submitting-a-world-to-be-made-public) -->
+<!-- - [What is Udon?](docs/worlds/udon) -->
 - [ワールドで使用可能なコンポーネント](whitelisted-world-components)
 - [Supported Scripted Assets](supported-assets) 
-<!-- - [World Creation, Optimization, and Community Labs Tips](docs/worlds/submitting-a-world-to-be-made-public) -->
 - [ワールド作成/最適化/コミュニティラボへのアップロード](submitting-a-world-to-be-made-public)
-<!-- - [What is Udon?](docs/worlds/udon) -->
 - [Udonとは?](udon)

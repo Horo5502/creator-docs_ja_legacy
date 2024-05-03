@@ -1,7 +1,7 @@
 ---
 title: "ようこそ!"
 slug: "getting-started"
-sidebar_position: -99
+sidebar_position: -1
 ---
 <!-- Your VRChat Creator Journey begins here!  -->
 VRChatクリエイターとしての旅はここからはじまります!
@@ -12,7 +12,7 @@ VRChatクリエイターとしての旅はここからはじまります!
 ## クイックスタート
 
 <div class="video-container">
-    <iframe src="https://www.youtube.com/embed/0u1g0TYoJsU" title="VRChat Creator Companion" frameborder="0" allow="encrypted-media; gyroscope; web-share" width="853" height="480" allowfullscreen></iframe>
+    <iframe src="https://www.youtube.com/embed/0u1g0TYoJsU" title="VRChat Creator Companion" frameborder="0" allow="encrypted-media; gyroscope; web-share" allowfullscreen></iframe>
 </div>
 
 

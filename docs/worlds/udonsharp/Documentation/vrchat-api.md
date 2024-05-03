@@ -59,7 +59,7 @@
 ## クラス
 
 <!-- ### Utilities -->
-### ユーティリティ
+### ユーティリティ {#utilities}
 `static class VRC.SDKBase.Utilities`
 
 <!-- #### Methods -->

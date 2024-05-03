@@ -30,7 +30,13 @@ export default function NotFoundContent({className}) {
               Please contact the owner of the site that linked you to the
               original URL and let them know their link is broken.
             </Translate> */}
-            リンク切れの場合、そのページはまだ翻訳されていない可能性があります。申し訳ありませんが英語版をご参照ください。
+            リンクが切れている場合、そのページはまだ翻訳されていない可能性があります。<br></br>
+            恐れ入りますが<a href='https://creators.vrchat.com/'>英語版</a>をご参照ください。
+          </p>
+          <img src={require('@site/static/NotFound.png').default}></img>
+          <p>
+            Image Credit: SAWARATSUKI<br></br>
+            <a href='https://github.com/SAWARATSUKI/ServiceLogos'>https://github.com/SAWARATSUKI/ServiceLogos</a>
           </p>
         </div>
       </div>
