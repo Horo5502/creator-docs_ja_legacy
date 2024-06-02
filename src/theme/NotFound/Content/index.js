@@ -36,7 +36,7 @@ export default function NotFoundContent({className}) {
           <img src={require('@site/static/NotFound.png').default}></img>
           <p>
             Image Credit: SAWARATSUKI<br></br>
-            <a href='https://github.com/SAWARATSUKI/ServiceLogos'>https://github.com/SAWARATSUKI/ServiceLogos</a>
+            <a href='https://github.com/SAWARATSUKI/KawaiiLogos'>https://github.com/SAWARATSUKI/KawaiiLogos</a>
           </p>
         </div>
       </div>
