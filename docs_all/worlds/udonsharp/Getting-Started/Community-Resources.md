@@ -1,6 +1,8 @@
-# Community Resources
+---
+title: "コミュニティー資料"
+---
 
-## Tutorials and info
+## チュートリアル情報
 
 ### はつぇさんのブログ
 - [U# 入門 ①](https://hatuxes.hatenablog.jp/entry/2020/04/05/013310)
@@ -13,23 +15,27 @@
 
 ### Vowgan's Tutorial Videos
 
-These videos start with the graph in the first half and cover U# in the second half
+これらの動画は前半はUdon Graphから始まり、後半でU#についても解説しています。
 - [VRChat Udon Tutorial | Basic Buttons](https://www.youtube.com/watch?v=GWv3zloRWY4)
+- (訳注: 上の動画は古いです。[新しいチュートリアル動画](https://youtu.be/ibDu0dCeUE8))
 - [VRChat Udon Tutorial | Contextual Buttons](https://www.youtube.com/watch?v=01a5qO60qlo)
 - [VRChat Udon Tutorial | Jumping and PlayerMods](https://www.youtube.com/watch?v=OventaglGCY)
 
-## Tools
+## ツール
 ### orels1's UdonToolKit
 Provides a number of useful utility behaviours and a much more powerful attribute system for making custom inspectors for your U# behaviours.
 
 https://github.com/orels1/UdonToolkit/
 
 ### cannorin's extern search
+(訳注: ウェブサイトが新たに更新されており、VPM対応がされているため古いサイトではないです。)  
 This is fairly out of date at this point since it hasn't had the node registry updated in a while.
 This is a web tool that lets you search what functions are available to Udon
-https://7colou.red/UdonExternSearch/
+<!-- https://7colou.red/UdonExternSearch/ -->
+https://7colou.red/UdonExternSearch2/
 
 ### CyanEmu
+(訳注: 現在ではCyanEmuはClientSimに置き換えられました。ClientSimに関する詳細は[こちら](/clientsim))  
 CyanEmu is a VRChat client emulator that enables you to test and debug your Udon (and SDK2) VRChat worlds directly in Unity. It comes with a desktop player controller that can use interacts, grab pickups, sit in chairs, respawn, etc.
 
 https://github.com/CyanLaser/CyanEmu

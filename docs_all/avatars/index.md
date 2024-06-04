@@ -1,50 +1,47 @@
 ---
 title: "Avatars"
 excerpt: "Learn about VRChat's Avatars 3.0 SDK"
-hidden: false
-createdAt: "2020-07-08T17:39:44.315Z"
-updatedAt: "2023-04-03T18:46:53.072Z"
 sidebar_position: 0
 ---
+# Avatars
 
-VRChat allows you to create and upload custom avatars!
+VRChatではオリジナルのアバターを作ってアップロードすることができます!
 
-# Creating Avatars
+# アバター作成
 
-To get started, check out [Creating your first avatar](/avatars/creating-your-first-avatar).
+最初に、[はじめてのアバター作成](/avatars/creating-your-first-avatar)をご覧ください。
+サイドバーに「Avatars」カテゴリーがありますので、そちらもご覧ください。 下に、特に重要なページをいくつか紹介します:
 
-There's a whole 'Avatars' category on the sidebar to check out. Here are some of the more impactful and important pages:
+- [リグの要件](/avatars/rig-requirements)では、3Dモデルのヒエラルキーのセットアップ方法が解説されています。
+- [アバターパフォーマンスランク](/avatars/avatar-performance-ranking-system)では、どのようにしてアバターが'Excellent'ランクになるか、または'Very Poor'ランクになるかが解説されています。
+- [アバターの最適化](/avatars/avatar-optimizing-tips) - _理由_を知ったなら、次はそれを実行に移しましょう。
+- Avatar3.0 SDKの重要な概念について詳しく知りたい方は、このページを読み進めてください。
 
-- [Rig Requirements](/avatars/rig-requirements) explains how to set up your custom 3D model's hierarchy for VRChat.
-- [Avatar Performance Ranking System](/avatars/avatar-performance-ranking-system) explains how some avatars achieve an 'Excellent' performance, and others 'Very Poor'.
-- [Avatar Optimization Tips](/avatars/avatar-optimizing-tips) - Now that you know _why_, check out this page to learn how to get all your frames back.
-- Continue reading this page to learn more about important Avatars 3.0 SDK concepts.
+## Avatar3.0とは?
 
-## What is Avatars 3.0?
+**Avatar3.0**はVRChatのアバターで利用可能なすべての機能の名前です。AV3の機能は、VRChatにおけるアバターの表現力、パフォーマンス、能力の向上に重点が置かれています。
 
-**Avatars 3.0** is our name for all the features available for avatars in VRChat. AV3's features are focused on improving expression, performance, and the abilities of avatars in VRChat.
+Avatar3.0は、つけているアバターを制御および操作するための[アクションメニュー](https://docs.vrchat.com/docs/action-menu)と高度に統合されています。AV3アバターをつくってみる前に、アクションメニューに触れてみるとよいかもしれません。
 
-Avatars 3.0 is heavily integrated with the [Action Menu](https://docs.vrchat.com/docs/action-menu) for controlling and interacting with the avatar you're wearing. It's probably best if you hop in and try out the Action Menu before building an AV3 avatar!
+## 前提条件
 
-## Prerequisites
+- [VRChat Avatars SDKをインストール&セットアップ](/sdk)
+- [はじめてのアバター作成](/avatars/creating-your-first-avatar)
 
-- [Install & set up the VRChat Avatars SDK](/sdk)
-- [Create your first avatar](/avatars/creating-your-first-avatar)
+## 概念
 
-## Understanding the Concepts
+Avatar3.0を理解し使うためには、いくつかの概念を知る必要があります。これらの概念は、アバターの構造や最適な組み立て方法、様々な機能の用途について理解する助けとなるでしょう。
 
-In order to understand and use Avatars 3.0, you need to know a few concepts. These concepts will help you understand the construction of avatars, how best to assemble them, and the intended use of various systems.
+### Unityシステム
 
-### Unity Systems
+このドキュメントは[Unityアニメーター](https://docs.unity3d.com/2019.4/Documentation/Manual/class-AnimatorController.html)についてある程度の知識があることを前提に書かれています。特に、次の基本的な知識について知っているとよいでしょう。
 
-This document is written with the assumption that you know a bit about [Unity Animators](https://docs.unity3d.com/2019.4/Documentation/Manual/class-AnimatorController.html). In particular, you should ensure you have basic working knowledge of:
-
-- Animators and animations
-- Animator layers, layer weights, and blending
-- States and transitions
-- Animator parameters
-- State behaviors
-- Avatar masks
+- アニメーターとアニメーション
+- アニメーションレイヤー、レイヤーのweight、ブレンド
+- ステートとアニメーション遷移
+- アニメーションパラメーター
+- State Behavior
+- アバターマスク
 
 It can also help to know about things like:
 
@@ -84,7 +81,7 @@ To delete the copied local test avatar, go to "Content Manager" tab of the VRCha
 
 ### Simulated Eye Movement
 
-Simulated eye movement is where your eyes will move around, looking at things around you. This isn't _eye tracking_ but it is a pretty good way of making your avatar look more "alive".
+Simulated eye movement is where your eyes will move around, looking at things around you. This isn't _eye tracking_-- as in, we don't have a way for you to input data from eye tracking devices-- but it is a pretty good way of making your avatar look more "alive".
 
 You can preview your setup in the editor and adjust how your avatar's eyes look in a combination of states, which are used to determine how your eye bones are set up.
 
@@ -93,10 +90,10 @@ Blinking can be handled via blendshapes or bones. Blendshapes are the usual meth
 Blinking blendshapes are defined by three blendshapes, described below:
 
 - Blink - Both eyes blinking
-- Looking Up - Blendshape used when looking up-- use this to tweak eye/iris/lid/eyebrow positioning
-- Looking Down - Blendshape used when looking down, use this similarly to LookUp
+- LookUp - Blendshape used when looking up-- use this to tweak eye/iris/lid/eyebrow positioning
+- LookDown - Blendshape used when looking down, use this similarly to LookUp
 
-You can set these blendshapes to `-none-` if you don't want to use them.
+You can set LookUp and LookDown to `-none-` if you don't want to use them.
 
 In addition, you'll notice two sliders-- one goes from Calm to Excited, and the other goes from Shy to Confident. Calm / Excited affects how often you blink. Shy / Confident affects how often you look at other players, and how long your gaze remains on other player's faces until you look away.
 
@@ -138,31 +135,21 @@ When "Locomotion Animations" is off, locomoting in FBT will NOT play the walking
 
 ### Write Defaults on States
 
-[Write Defaults](https://docs.unity3d.com/2019.4/Documentation/Manual/class-State.html) is an option available for each state in an Animator Controller.
+[Write Defaults](https://docs.unity3d.com/2019.4/Documentation/Manual/class-State.html) is an option available on states in Animators in Unity. 
 
-Write Defaults "Off" states will set only the animated property values, and those values will not change unless animated again. This can make it easier to keep track of what properties are animated through any specific layer.
+Write Defaults "on" will write back the default values of **all animated properties** (_on a Controller-wide basis!_) that are not animated in that particular state. This can cause some very strange interactions if you don't plan for it.
 
-Write Defaults "On" states will set default values for properties that are not being animated. This means that if you are animating a property value to "1" from "0", the value will revert to the default "0" upon exiting the state, unless the subsequent state continues to animate the value as "1".
+This feature was added by Unity during the migration to version 5.0. This was done so pre-existing assets and project that relied on this write-all-default-properties behavior didn't break. 
 
-Regardless of which option you choose, **we recommend keeping your usage of Write Defaults consistent across the entire avatar** - in other words, have Write Defaults "Off" for all states, or "On" for all states. Having both "Off" and "On" states on an avatar is known to cause unexpected property values to be set. This is commonly known as "Mixed Write Defaults". The SDK will give you a warning if it detects that you've done this.
+Normally, when you're working with other game developers on a project, you agree on a standard. In VRChat, we're _all_ game developers, so we must set the standard here. 
 
-VRChat uses Write Defaults set to "Off" in its built-in and example animators.
+VRChat does not use "Write Defaults" in our built-in and example animators. This means that only the actual properties that are in animations get played by any one animation node. We recommend that creators also follow this workflow, as it is easier to keep track of what properties will be animated through any specific layer, and it also lines up with the intended use of Unity as a whole.
 
-If you decide to set Write Defaults to "Off":
-- Write Defaults is set to **On** for newly created states, so you'll need to change this value for each new state you create.
-- You may need to add animations to initialize or reset properties with specific values.
-- It's recommended that for all states in a layer, you explicitly animate every property affected by that layer.
-- Each state should have an animation clip ("motion" in the state options) that animates at least one property. It does not have to be a valid property reference. States with "None" motion or entirely empty clips will behave as if Write Defaults is "On".
+The Write Defaults value defaults to **on** when you create a new node, so creators must be aware they will have to uncheck this value. If you want to use Write Defaults, you will have to keep track of all the possible properties that may be written by a node with this enabled.
 
-:::caution Additive layers and direct blend trees
+**We recommend keeping Write Defaults off and explicitly animating any parameter that needs to be set by the animation.** Note that this may require adding "reset" animations or adding properties to the animation to "initialize" transforms in a specific orientation.
 
-VRChat's avatar creator community recommends setting Write Defaults to "On" for:
-- Layers that use additive blending
-- Blend trees that use direct blending
-
-You should do this even if you are using "Off" for the rest of the avatar. The SDK will avoid generating warnings about mixed Write Defaults settings in these cases.
-
-:::
+All that being said, if you get into more advanced use cases and setups, it may be advantageous to use Write Defaults On.
 
 ### Generic Avatars
 

@@ -3,7 +3,7 @@ import type {Config} from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 
 const config: Config = {
-  title: 'VRChat CreatorDocs非公式翻訳',
+  title: 'VRChat CreatorDocs非公式日本語翻訳',
   tagline: 'Learn, create and share using our tools and documentation.',
   favicon: 'img/favicon.ico',
 

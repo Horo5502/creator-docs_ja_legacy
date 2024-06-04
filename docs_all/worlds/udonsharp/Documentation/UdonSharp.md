@@ -1,23 +1,23 @@
 # UdonSharp
 
-# Attributes
-All supported attributes in UdonSharp
+# 属性
+UdonSharpでサポートされている全ての属性
 
-| | Attribute | | 
+| | 属性 | | 
 |--- | --- | --- |
 |[Header](https://docs.unity3d.com/ScriptReference/HeaderAttribute.html)|[HideInInspector](https://docs.unity3d.com/ScriptReference/HideInInspector.html)|[NonSerialized](https://docs.microsoft.com/dotnet/api/system.nonserializedattribute)|
 |[SerializeField](https://docs.unity3d.com/ScriptReference/SerializeField.html)|[Space](https://docs.unity3d.com/ScriptReference/SpaceAttribute.html)|[Tooltip](https://docs.unity3d.com/ScriptReference/TooltipAttribute.html)|
 |[ColorUsage](https://docs.unity3d.com/ScriptReference/ColorUsageAttribute.html)|[GradientUsage](https://docs.unity3d.com/ScriptReference/GradientUsageAttribute.html)|[TextArea](https://docs.unity3d.com/ScriptReference/TextAreaAttribute.html)|
-|[UdonSynced](#udonsynced)|[DefaultExecutionOrder](#defaultexecutionorder)|[UdonBehaviourSyncMode](#udonbehavioursyncmode)|
-|[RecursiveMethod](#recursivemethod)|[FieldChangeCallback](#fieldchangecallback)|
+|[UdonSynced](#udonsynced)(original)|[DefaultExecutionOrder](#defaultexecutionorder)(original)|[UdonBehaviourSyncMode](#udonbehavioursyncmode)(original)|
+|[RecursiveMethod](#recursivemethod)(original)|[FieldChangeCallback](#fieldchangecallback)(original)|
 
 
 ## UdonSynced
 `[UdonSynced]` / `[UdonSynced(UdonSyncMode)]`
 
-*See [Synced Variables](/vrchat-api#synced-variables) for variables that can be synced.*
+*同期可能な変数の一覧は[Synced Variables](/worlds/udonsharp/documentation/vrchat-api#synced-variables)をご覧ください。
 
-### Example
+### 例
 ```cs
 public class Example : UdonSharpBehaviour 
 {
@@ -26,6 +26,7 @@ public class Example : UdonSharpBehaviour
 
     [UdonSynced(UdonSyncMode.Linear)]
     // This float will be linearly interpolated
+    // このfloatは線形補間されます
     public float synchronizedFloat;
 }
 ```
@@ -33,19 +34,25 @@ public class Example : UdonSharpBehaviour
 ### UdonSyncMode
 `UdonSharp.UdonSyncMode`
 
-| Name | Summary |
 | --- | --- |
 | NotSynced | |
 | None | No interpolation (Default) |
 | Linear | Lerp |
-| Smooth | *Some kind of smoothed syncing* |
+| Smooth | *Some kind of smoothed syncing* | -->
+
+| Name | 概要 |
+| --- | --- |
+| NotSynced | |
+| None | 補間なし (デフォルト) |
+| Linear | Lerp(線形補間) |
+| Smooth | *良い感じにスムーズな同期* |
 
 ## UdonBehaviourSyncMode
 `[UdonBehaviourSyncMode]` / `[UdonBehaviourSyncMode(BehaviourSyncMode)]`
 
-Enforces a chosen sync mode and performs additional validation on synced variables where appropriate.
+指定された同期モードを強制し、必要に応じて同期変数に対して追加の検証を行います。
 
-### Example
+### 例
 ```cs
 [UdonBehaviourSyncMode(BehaviourSyncMode.Manual)]
 public class Example : UdonSharpBehaviour 
@@ -56,15 +63,23 @@ public class Example : UdonSharpBehaviour
 ### BehaviourSyncMode
 `UdonSharp.BehaviourSyncMode`
 
-| Name | Summary |
 | --- | --- |
 | Any | Nothing is enforced and the behaviours can be set to either sync type by the user. This is the default when no attribute is specified. |
 | None | Enforces no synced variables on the behaviour and hides the selection dropdown in the UI for the sync mode. Nothing is synced and SendCustomNetworkEvent will not work on the behaviour. |
 | Continuous | Synced variables will be updated automatically at a very frequent rate, but may not always reliably update to save bandwidth. |
 | Manual | Synced variables are updated manually by the user less frequently, but ensures that updates are reliable when requested. |
-| NoVariableSync | Enforces that there are no synced variables on the behaviour, hides the sync mode selection dropdown, and allows you to use the behaviours on GameObjects that use either Manual or Continuous sync. |
+| NoVariableSync | Enforces that there are no synced variables on the behaviour, hides the sync mode selection dropdown, and allows you to use the behaviours on GameObjects that use either Manual or Continuous sync. | -->
+
+| Name | 概要 |
+| --- | --- |
+| Any | モードを強制せず、ユーザーが同期モードの設定を行うことができます。属性が指定されていない場合のデフォルトです。 |
+| None | 変数同期を行わないことを強制し、UI上の同期モードを選ぶドロップダウンを非表示にします。何も同期されず、SendCustomNetworkEventは機能しません。 |
+| Continuous | 同期変数は自動的に、非常に高い頻度で更新されますが、帯域幅の制限のため常に確実に更新されるとは限りません。 |
+| Manual | 同期変数はユーザーが手動で更新します。同期頻度は低いですが、更新を要求した場合は確実に行われます。 |
+| NoVariableSync | behaviour内に同期変数がないことを強制し、同期モードのドロップダウンを非表示にします。Manual同期かContinuous同期を使用するGameObjectsのbehaviourを使うことができます。 |
 
 ## DefaultExecutionOrder
+
 
 Specifies the order that Update, LateUpdate, and FixedUpdate happen in relative to other UdonSharpBehaviours with an int. All behaviours are at 0 by default, the lower the int, the earlier their update happens. The int can be negative.
 

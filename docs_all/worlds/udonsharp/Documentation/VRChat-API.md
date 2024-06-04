@@ -1,10 +1,10 @@
 # VRChat API
 
 ## API
-### Methods
+### メソッド
 * [VRCInstantiate](#vrcinstantiate)
 
-### Classes
+### クラス
 * [Utilities](#utilities)
 * [VRCStation](#vrcstation)
 * [Networking](#networking)
@@ -23,7 +23,7 @@
 * [VRCPickup](#vrcpickup)
 * [VRCPortalMarker](#vrcportalmarker)
 
-### Enums
+### Enum
 * [EventTiming](#eventtiming)
 * [Mobility](#mobility)
 * [NetworkEventTarget](#networkeventtarget)
@@ -37,26 +37,26 @@
 * [PickupOrientation](#pickuporientation)
 * [PickupHand](#pickuphand)
 
-## Supported Features
+## サポートされている機能
 * [Synced Variables](#synced-variables)
 
 ---
 
-## Methods
+## メソッド
 
 ### VRCInstantiate
-| Static | Returns | Name | Summary |
+| Static | Returns | Name | 概要 |
 | :---: | --- | --- | --- |
-| ✔️ | [GameObject](https://docs.unity3d.com/ScriptReference/GameObject.html) | VRCInstantiate([GameObject](https://docs.unity3d.com/ScriptReference/GameObject.html) original) | Creates a local, non-synced copy of an object. See [here](https://docs.unity3d.com/ScriptReference/Object.Instantiate.html) for more information. |
+| ✔️ | [GameObject](https://docs.unity3d.com/ScriptReference/GameObject.html) | VRCInstantiate([GameObject](https://docs.unity3d.com/ScriptReference/GameObject.html) original) | オブジェクトの、ローカルで非同期なコピーを作ります。 詳細な情報は [こちら](https://docs.unity3d.com/ScriptReference/Object.Instantiate.html) をご覧ください。 |
 
 
-## Classes
+## クラス
 
-### Utilities
+### ユーティリティ {#utilities}
 `static class VRC.SDKBase.Utilities`
 
-#### Methods
-| Static | Returns | Name | Summary |
+#### メソッド
+| Static | Returns | Name | 概要 |
 | :---: | --- | --- | --- |
 | ✔️ | bool | IsValid(object obj) | Returns true if the specified object is valid and not a null reference, otherwise false.  This is typically used to check [VRCPlayerApi](#vrcplayerapi) objects after a player has left the instance, or [GameObject](https://docs.unity3d.com/ScriptReference/GameObject.html) objects that have been destroyed. |
 | ✔️ | void | ShuffleArray(int[] array) | Randomly shuffles each element in the array. |
@@ -64,7 +64,7 @@
 ### VRCStation
 `class VRC.SDK3.Components.VRCStation` / `class VRC.SDKBase.VRCStation`
 
-#### Properties
+#### プロパティ
 | Type | Name | Summary |
 | --- | --- | --- |
 | [Mobility](#mobility) | PlayerMobility | Determines if the player be able to move.  Default value is `VRCStation.Mobility.Immobilize`. |
@@ -87,7 +87,7 @@
 #### Properties
 | Static | Type | Name | Summary |
 | :---: | --- | --- | --- |
-| ✔️ | bool | IsMaster | Returns if the local player is the instance master |
+| ✔️ | bool | isMaster | Returns if the local player is the instance master |
 | ✔️ | [VRCPlayerApi](#vrcplayerapi) | LocalPlayer | Returns the current player |
 | ✔️ | bool | IsNetworkSettled | Returns true if the network is ready |
 
@@ -293,7 +293,7 @@ VRC Object Pool provides a lightweight method of managing an array of game objec
 
 Objects are made active by the pool via the TryToSpawn node, which will return the object that was made active, or a null object if none are available. Objects may be returned to the pool by the pool's owner, and automatically disabled, via the Return node.
 
-When objects are enabled by the pool, the OnEnable event is fired, which an UdonBehaviour on the object may listen for. Note that the OnEnable() event fires before the udon Start() event.
+When objects are enabled by the pool the OnSpawn event is fired, which an udon behaviour on the object may listen for.
 
 Late joiners will have the objects automatically made active or inactive where appropriate.
 
@@ -402,8 +402,9 @@ A component used to create portals to other rooms.
 
 | Name | Summary |
 | --- | --- |
-| Update | The event is fired during the `Update()` event. |
-| LateUpdate | The event is fired during the `LateUpdate()` event. |
+| Update | The event is fired in during the `Update()` event. |
+| LateUpdate | The event is fired in during the `LateUpdate()` event. |
+| FixedUpdate | The event is fired in during the `FixedUpdate()` event. |
 
 ### Mobility
 `enum VRC.SDKBase.VRCStation.Mobility`

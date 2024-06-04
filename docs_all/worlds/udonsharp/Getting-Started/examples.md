@@ -1,16 +1,19 @@
-# Examples
+---
+title: "スクリプト例"
+---
 
-* [Spinning Cube](#spinning-cube)
-* [Player Settings](#player-settings)
-* [Interact](#interact)
-* [Teleport Player](#teleport-player)
-* [Get Players](#get-players)
-* [UdonSharp Script Example](#udonsharp-script-example)
+
+* [回転するキューブ](#spinning-cube)
+* [プレイヤー操作に関する設定](#player-settings)
+* [トリガーできるボタン](#interact)
+* [プレイヤーのテレポート](#teleport-player)
+* [プレイヤーの取得](#get-players)
+* [UdonSharpスクリプト例](#udonsharp-script-example)
 
 
 ---
 
-### Spinning Cube
+### 回転するキューブ {#spinning-cube}
 ```cs
 using UnityEngine;
 using UdonSharp;
@@ -24,7 +27,7 @@ public class RotatingCubeBehaviour : UdonSharpBehaviour
 }
 ```
 
-### Player Settings
+### プレイヤー操作に関する設定 {#player-settings}
 ```cs
 using UnityEngine;
 using UdonSharp;
@@ -50,9 +53,11 @@ public class PlayerModSettings : UdonSharpBehaviour
     }
 }
 ```
-A more advanced example is located in the [examples folder of UdonSharp](https://github.com/Merlin-san/UdonSharp/blob/master/Assets/UdonSharp/Examples/Utilities/PlayerModSetter.cs).
+より高度なスクリプト例は、[UdonSharpのExamplesフォルダー](https://github.com/Merlin-san/UdonSharp/blob/master/Assets/UdonSharp/Examples/Utilities/PlayerModSetter.cs)にあります。  
+(訳注: 上記のリンクは古いです。新しいものは[こちら](https://github.com/vrchat-community/UdonSharp/tree/master/Packages/com.vrchat.UdonSharp/Samples~))
 
-### Interact
+
+### トリガーできるボタン {#interact}
 ```cs
 using UnityEngine;
 using UdonSharp;
@@ -66,7 +71,7 @@ public class ClickMe: UdonSharpBehaviour
 }
 ```
 
-### Teleport Player
+### プレイヤーのテレポート {#teleport-player}
 ```cs
 using UdonSharp;
 using UnityEngine;
@@ -86,7 +91,7 @@ public class TeleportPlayer : UdonSharpBehaviour
 }
 ```
 
-### Get Players
+### プレイヤーの取得 {#get-players}
 Example on how to get all players in the instance.
 ```cs
 using UdonSharp;
@@ -110,7 +115,7 @@ public class GetPlayersExample : UdonSharpBehaviour
 }
 ```
 
-### UdonSharp Script Example
+### UdonSharpスクリプト例 {#udonsharp-script-example}
 This is an example class for UdonSharp and how it communicates with other UdonSharp behaviours.
 ```cs
 using UdonSharp;
