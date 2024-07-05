@@ -1,5 +1,11 @@
 #Requires -Modules powershell-yaml
 
+param (
+    # npm prestartから呼び出しているので、引数が必ず文字列になってしまう
+    [string]$logging = "true"
+)
+$logging = [System.Convert]::ToBoolean($logging)
+
 # 与えられたパスを構成するディレクトリが存在しない場合に作成
 function MakeDirectoryIfNotExists {
     param (
@@ -7,8 +13,10 @@ function MakeDirectoryIfNotExists {
     )
     
     if (!(Test-Path $dirpath)) {
-        Write-Host -NoNewline -ForegroundColor Green "MKDIR:   "
-        Write-Host $dirpath
+        if ($logging -eq $true) {
+            Write-Host -NoNewline -ForegroundColor Green "MKDIR:   "
+            Write-Host $dirpath
+        }
         New-Item -ItemType Directory -Force -Path $dirpath | Out-Null
     }
 }
@@ -41,8 +49,10 @@ function CopyFilesFromYaml {
 
                 MakeDirectoryIfNotExists -dirpath $destinationDir
 
-                Write-Host -NoNewline -ForegroundColor Green "COPY:    "
-                Write-Host "source = $source,   destination = $destination"
+                if ($logging -eq $true) {
+                    Write-Host -NoNewline -ForegroundColor Green "COPY:    "
+                    Write-Host "source = $source,   destination = $destination"
+                }
                 Copy-Item -Path $source -Destination $destination -Force
             }
 
@@ -56,8 +66,16 @@ function CopyFilesFromYaml {
     }
 }
 
+if (Test-Path "$PSScriptRoot\docs") {
+    if ($logging -eq $true) {
+        Write-Host -ForegroundColor Green "Initialize docs directory"
+    }
+    Remove-Item -Path "$PSScriptRoot\docs\" -Recurse -Force
+}
 
 # copy-target.ymlを読み込んで、ファイルをコピー
 $yamlData = ConvertFrom-Yaml ((Get-Content (Join-Path $PSScriptRoot "deploy-target.yml")) -join "`n")
-Write-Host -ForegroundColor Green "Copy markdown files"
+if ($logging -eq $true) {
+    Write-Host -ForegroundColor Green "Copy markdown files"
+}
 CopyFilesFromYaml -path "$PSScriptRoot" -data $yamlData

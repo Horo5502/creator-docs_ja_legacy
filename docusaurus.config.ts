@@ -37,6 +37,7 @@ const config: Config = {
       'classic',
       {
         docs: {
+          path: 'docs',
           routeBasePath: '/',
           sidebarPath: './sidebars.ts',
           showLastUpdateTime: true
@@ -81,7 +82,7 @@ const config: Config = {
       },
     },
     navbar: {
-      title: 'VRChat CreatorDocs非公式翻訳',
+      title: 'VRChat CreatorDocs非公式日本語翻訳',
       logo: {
         alt: 'VRChat logo_ja',
         src: 'img/logo.png',

@@ -1,34 +1,36 @@
 # Roadmap
 
-This page gives you an overview of upcoming changes to the VRChat Worlds and Avatars SDK.
+このページでは、VRChat WorldsおよびAvatars SDKに関する今後の変更点の概要をお伝えします。
 
-:::note Last updated: March 2, 2024
 
-This page may be out of date. For the latest information, visit VRChat's [feedback board](https://feedback.vrchat.com/),  [forum](https://ask.vrchat.com/c/official/31), and [SDK release notes](/releases/).
+
+:::note 最終更新日: 2024年3月2日
+
+このページの情報は最新でない可能性があります。最新情報はVRChatの[フィードバックボード](https://feedback.vrchat.com/)、[フォーラム](https://ask.vrchat.com/c/official/31)、および[SDKリリースノート](/releases/)をご覧ください。
 
 :::
 
-| Status      | Name                                                                                                                                                             | ETA[^1]     |
+| ステータス  | 名前                                                                                                                                                             | ETA[^1]     |
 | ----------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------- |
-| Coming soon | [Inspector improvements for Worlds SDK Components](https://feedback.vrchat.com/sdk-bug-reports/p/inspector-improvements-for-worlds-sdk-components)               |             |
-| Coming soon | [Allow world creators to change Physics bounce threshold](https://feedback.vrchat.com/udon/p/allow-world-creators-to-change-physics-bounce-threshold)            |             |
-| In progress | [Upgrade the SDK to Unity 2022.3.22f1](https://feedback.vrchat.com/sdk-bug-reports/p/upgrade-the-sdk-to-unity-2022322f1)                                         | May 2024    |
-| In progress | [Expose additional TextMeshPro features to Udon](https://feedback.vrchat.com/udon/p/expose-additional-textmeshpro-features-to-udon)                              | May 2024    |
-| In progress | [Support the New AI Navigation in Unity 2022](https://feedback.vrchat.com/udon/p/support-the-new-ai-navigation-in-unity-2022)                                    | May 2024    |
-| In progress | [Add uncompressed size limit to avatars](https://feedback.vrchat.com/avatar-30/p/add-memory-usage-limit-to-avatars)                                              | July 2024   |
-| In progress | [VRCConstraint (Optimized replacement for Unity constraints)](https://feedback.vrchat.com/avatar-30/p/vrcconstraint-optimized-replacement-for-unity-constraints) | Summer 2024 |
-| In progress | [Save & Load persistent World Data](https://feedback.vrchat.com/udon/p/save-load-persistent-world-data)                                                          | Summer 2024 |
-| In progress | [Udon 2](https://feedback.vrchat.com/udon/p/udon-2)                                                                                                              | End of 2024 |
-| In progress | [New Character Controller for Worlds](https://feedback.vrchat.com/udon/p/new-character-controller-for-worlds)                                                    | End of 2024 |
-| In progress | [Permanent Purchases in Group Stores](https://feedback.vrchat.com/creator-economy-sellers/p/permanent-purchases-in-group-stores )[^2]                            | End of 2024 |
-| Planned     | [Recurring Payment in Group Stores](https://feedback.vrchat.com/creator-economy-sellers/p/recurring-payment-in-group-stores)[^2]                                 |             |
-| Planned     | [Community plugins (Custom Udon Graph nodes)](https://feedback.vrchat.com/udon/p/community-plugins-custom-udon-graph-nodes)                                      |             |                                                                                                                          |             |
+| 近日公開    | [Worlds SDKコンポーネントのインスペクタ改善](https://feedback.vrchat.com/sdk-bug-reports/p/inspector-improvements-for-worlds-sdk-components)               |             |
+| 近日公開    | [ワールドクリエイターが物理のバウンス閾値を変更できるようにする](https://feedback.vrchat.com/udon/p/allow-world-creators-to-change-physics-bounce-threshold)            |             |
+| 進行中      | [SDKをUnity 2022.3.22f1にアップグレード](https://feedback.vrchat.com/sdk-bug-reports/p/upgrade-the-sdk-to-unity-2022322f1)                                         | 2024年5月    |
+| 進行中      | [Udonに追加のTextMeshPro機能を公開](https://feedback.vrchat.com/udon/p/expose-additional-textmeshpro-features-to-udon)                              | 2024年5月    |
+| 進行中      | [Unity 2022の新しいAIナビゲーションをサポート](https://feedback.vrchat.com/udon/p/support-the-new-ai-navigation-in-unity-2022)                                    | 2024年5月    |
+| 進行中      | [アバターに非圧縮サイズ制限を追加](https://feedback.vrchat.com/avatar-30/p/add-memory-usage-limit-to-avatars)                                              | 2024年7月   |
+| 進行中      | [VRCConstraint (Unityの制約の最適化された代替)](https://feedback.vrchat.com/avatar-30/p/vrcconstraint-optimized-replacement-for-unity-constraints) | 2024年夏 |
+| 進行中      | [永続的なワールドデータの保存と読み込み](https://feedback.vrchat.com/udon/p/save-load-persistent-world-data)                                                          | 2024年夏 |
+| 進行中      | [Udon 2](https://feedback.vrchat.com/udon/p/udon-2)                                                                                                              | 2024年末 |
+| 進行中      | [ワールド用の新しいキャラクターコントローラー](https://feedback.vrchat.com/udon/p/new-character-controller-for-worlds)                                                    | 2024年末 |
+| 進行中      | [グループストアでの永久購入](https://feedback.vrchat.com/creator-economy-sellers/p/permanent-purchases-in-group-stores )[^2]                            | 2024年末 |
+| 計画中      | [グループストアでの定期支払い](https://feedback.vrchat.com/creator-economy-sellers/p/recurring-payment-in-group-stores)[^2]                                 |             |
+| 計画中      | [コミュニティプラグイン (カスタムUdonグラフノード)](https://feedback.vrchat.com/udon/p/community-plugins-custom-udon-graph-nodes)                                      |             |                                                                                                                          |             |
 
-Please keep in mind that this list is subject to change. It’s also doesn’t include
-- minor planned changes,
-- [Creator Companion](https://vcc.docs.vrchat.com/) changes,
-- documentation changes,
-- features that haven't been announced yet.
+このリストは変更される可能性があることに注意してください。また、以下は含まれていません。
+- 小規模な予定変更
+- [Creator Companion](https://vcc.docs.vrchat.com/)の変更
+- ドキュメントの変更
+- まだ発表されていない機能
 
-[^1]: The delivery dates are approximate and may change over time.
-[^2]: This feedback URL is only accessible to sellers who have joined VRChat's [Creator Economy](/economy/).
+[^1]: 提供予定日はおおよそのものであり、時間とともに変更される可能性があります。
+[^2]: このフィードバックURLは、VRChatの[Creator Economy](/economy/)に参加している販売者のみがアクセスできます。

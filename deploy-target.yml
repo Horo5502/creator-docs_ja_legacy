@@ -1,5 +1,8 @@
 docs_all:
   - getting-started
+  - roadmap
+  - about-this-site
+  - how-to-contribute
   - worlds:
       - index
       - udon:
@@ -7,7 +10,7 @@ docs_all:
           - getting-started-with-udon
           - players:
               - index
-      - UdonSharp:
+      - udonSharp:
         - index
         - Documentation:
           - UdonSharp
@@ -27,5 +30,5 @@ docs_all:
       - index
   - vcc:
       - index
-  - Clientsim:
+  - clientsim:
       - index
