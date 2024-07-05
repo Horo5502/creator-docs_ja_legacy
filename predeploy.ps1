@@ -1,5 +1,3 @@
-#Requires -Modules powershell-yaml
-
 param (
     # npm prestartから呼び出しているので、引数が必ず文字列になってしまう
     [string]$logging = "true"
@@ -22,23 +20,23 @@ function MakeDirectoryIfNotExists {
 }
 
 # YAMLデータを解析してコピー操作を実行
-function CopyFilesFromYaml {
+function CopyFilesFromJson {
     param (
         [string]$path,
-        [hashtable]$data
+        [PSCustomObject]$data
     )
 
-    foreach ($key in $data.Keys) {
-        $value = $data[$key]
+    foreach ($key in $data.PSObject.Properties.Name) {
+        $value = $data.$key
         $newPath = Join-Path -Path $path -ChildPath $key
 
 
-        if ($value -is [hashtable]) {
+        if ($value -is [PSCustomObject]) {
             # 再帰的にディレクトリを探索
-            CopyFilesFromYaml -path $newPath -data $value
+            CopyFilesFromJson -path $newPath -data $value
         }
 
-        elseif ($value -is [System.Collections.Generic.List[System.Object]]) {
+        elseif ($value -is [System.Collections.ArrayList] -or $value -is [System.Object[]]) {
             # リスト内にはハッシュテーブルも含まれている可能性があるので、ファイル名文字列のみを抽出
             $stringvalue = $value | Where-Object { $_ -is [String]}
 
@@ -57,9 +55,9 @@ function CopyFilesFromYaml {
             }
 
             foreach ($v in $value) {
-                if ($v -is [hashtable]) {
+                if ($v -is [PSCustomObject]) {
                     # 再帰的にディレクトリを探索
-                    CopyFilesFromYaml -path $newPath -data $v
+                    CopyFilesFromJson -path $newPath -data $v
                 }
             }
         }
@@ -74,8 +72,8 @@ if (Test-Path "$PSScriptRoot\docs") {
 }
 
 # copy-target.ymlを読み込んで、ファイルをコピー
-$yamlData = ConvertFrom-Yaml ((Get-Content (Join-Path $PSScriptRoot "deploy-target.yml")) -join "`n")
+$jsonData = ConvertFrom-Json ((Get-Content (Join-Path $PSScriptRoot "deploy-target.json")) -join "`n")
 if ($logging -eq $true) {
     Write-Host -ForegroundColor Green "Copy markdown files"
 }
-CopyFilesFromYaml -path "$PSScriptRoot" -data $yamlData
+CopyFilesFromJson -path "$PSScriptRoot" -data $jsonData
