@@ -14,7 +14,7 @@ $action = {
     $logline = "$(Get-Date), $changeType, $path"
     Write-Host $logline
 
-    $destination = $path -creplace 'docs_all', 'docs'
+    $destination = $path -creplace 'docs_all', '.docs'
     Copy-Item -Path $path -Destination $destination -Force
 }
 

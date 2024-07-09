@@ -1,8 +1,6 @@
 param (
-    # npm prestartから呼び出しているので、引数が必ず文字列になってしまう
-    [string]$logging = "true"
+    [switch]$logging = $false
 )
-$logging = [System.Convert]::ToBoolean($logging)
 
 # 与えられたパスを構成するディレクトリが存在しない場合に作成
 function MakeDirectoryIfNotExists {
@@ -19,7 +17,7 @@ function MakeDirectoryIfNotExists {
     }
 }
 
-# YAMLデータを解析してコピー操作を実行
+# JSONデータを解析してコピー操作を実行
 function CopyFilesFromJson {
     param (
         [string]$path,
@@ -42,7 +40,7 @@ function CopyFilesFromJson {
 
             foreach ($s in $stringvalue) {
                 $source = Join-Path -Path $newPath -ChildPath "$s.md"
-                $destinationDir = $newPath -creplace 'docs_all', 'docs'
+                $destinationDir = $newPath -creplace 'docs_all', '.docs'
                 $destination = Join-Path -Path $destinationDir -ChildPath "$s.md"
 
                 MakeDirectoryIfNotExists -dirpath $destinationDir
@@ -64,11 +62,16 @@ function CopyFilesFromJson {
     }
 }
 
-if (Test-Path "$PSScriptRoot\docs") {
+if (Test-Path "$PSScriptRoot\.docs") {
+    Remove-Item -Path "$PSScriptRoot\.docs" -Recurse -Force
     if ($logging -eq $true) {
-        Write-Host -ForegroundColor Green "Initialize docs directory"
+        Write-Host -ForegroundColor Green ".docs directory initialized"
     }
-    Remove-Item -Path "$PSScriptRoot\docs\" -Recurse -Force
+    New-Item -ItemType Directory -Force -Path "$PSScriptRoot\.docs" | Out-Null
+    Set-ItemProperty -Path "$PSScriptRoot\.docs" -Name "Attributes" -Value ([System.IO.FileAttributes]::Hidden)
+    if ($logging -eq $true) {
+        Write-Host -ForegroundColor Green ".docs directory made & hidden"
+    }
 }
 
 # copy-target.ymlを読み込んで、ファイルをコピー

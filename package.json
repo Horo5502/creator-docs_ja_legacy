@@ -4,8 +4,8 @@
   "private": true,
   "scripts": {
     "docusaurus": "docusaurus",
-    "prestart": "pwsh -File ./predeploy.ps1 -logging false",
-    "start": "pwsh -Command \"Start-Process -FilePath 'pwsh' -ArgumentList '-File', './updater.ps1'\" & docusaurus start",
+    "prestart": "powershell -ExecutionPolicy Bypass -File ./predeploy.ps1",
+    "start": "powershell -ExecutionPolicy Bypass -File ./start.ps1",
     "build": "docusaurus build",
     "swizzle": "docusaurus swizzle",
     "deploy": "docusaurus deploy",
