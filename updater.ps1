@@ -24,8 +24,16 @@ Write-Host "Registered the event."
 
 
 Try {
-    # スクリプトが終了しないようにする
-    while ($true) { Start-Sleep 5 }
+    while ($true) {
+        # スクリプトが終了しないようにする
+        Start-Sleep 5
+
+        # ローカルサーバーが起動していなかったら、このスクリプトを終了する
+        $connection = Test-NetConnection -ComputerName localhost -Port 3000
+        if (!$connection.TcpTestSucceeded) {
+            break
+        }
+    }
 }
 Finally {
     # Ctrl+Cが押されたときにイベントを削除する
