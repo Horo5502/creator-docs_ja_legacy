@@ -3,6 +3,8 @@ title: "Avatars"
 excerpt: "Learn about VRChat's Avatars 3.0 SDK"
 sidebar_position: 0
 ---
+import UnityVersionedLink from '@site/src/components/UnityVersionedLink.js';
+
 # Avatars
 
 VRChatではオリジナルのアバターを作ってアップロードすることができます! このカテゴリーでは、VRChatのAvatars 3.0 SDKの使い方を解説します。
