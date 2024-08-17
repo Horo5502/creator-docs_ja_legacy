@@ -1,13 +1,9 @@
----
-title: "Animator Parameters"
-slug: "animator-parameters"
-hidden: false
-createdAt: "2020-08-05T22:30:32.065Z"
-updatedAt: "2023-04-07T14:38:34.913Z"
----
+import UnityVersionedLink from '@site/src/components/UnityVersionedLink.js';
+
+# Animator Parameters
 :::caution Unity Knowledge Required
 
-This document is written with the assumption that you know a bit about [Unity Animators](https://docs.unity3d.com/2019.4/Documentation/Manual/class-AnimatorController.html).
+This document is written with the assumption that you know a bit about <UnityVersionedLink versionKey="minor" url="https://docs.unity3d.com/<VERSION>/Documentation/Manual/class-AnimatorController.html">Unity Animators</UnityVersionedLink>.
 
 :::
 
@@ -191,7 +187,7 @@ Given this, it can be a good idea to use the same Expression Parameters asset fo
 
 ### Mismatched Parameter Type Conversion
 
-When you choose a [parameter type](/avatars/animator-parameters/#parameter-types) in your [animator](https://docs.unity3d.com/Manual/AnimationParameters.html), it's a good idea to choose the same type as the [built-in parameter](/avatars/animator-parameters/#parameters) or [custom parameter](/avatars/expression-menu-and-controls/#creating-an-expression-menu) you're trying to use. For example: If you use VRChat's built-in `AFK` parameter in your animator,  you should choose the type `bool`.
+When you choose a [parameter type](/avatars/animator-parameters/#parameter-types) in your [animator](https://docs.unity3d.com/Manual/AnimationParameters.html), it's a good idea to choose the same type as the [built-in parameter](/avatars/animator-parameters/#parameters) or [custom parameter](/avatars/expression-menu-and-controls/#creating-an-expressions-menu) you're trying to use. For example: If you use VRChat's built-in `AFK` parameter in your animator,  you should choose the type `bool`.
 
 However, you *can* choose a mismatched type for your parameters. VRChat will try convert the parameter's value to the type used by the animator. For example, if you choose the type `float` for your `AFK` parameter, VRChat will automatically set `AFK` to `1.0` or `0.0` instead of `true` or `false`. This also allows you to use the `AFK` parameter in your Animator's [Blend Tree](https://docs.unity3d.com/Manual/class-BlendTree.html).
 

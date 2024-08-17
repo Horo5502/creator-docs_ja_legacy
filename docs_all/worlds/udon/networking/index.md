@@ -1,9 +1,5 @@
----
-title: "Networking"
-sidebar_position: 1
-createdAt: "2020-12-15T00:35:42.570Z"
-updatedAt: "2023-01-16T15:28:57.978Z"
----
+# Networking
+
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
@@ -74,7 +70,26 @@ There are scenarios where a master player might become unresponsive for a while,
 ## Variables
 A variable is a container for a value. UdonBehaviours run Udon Programs, and you can add variables to these programs.
 
+<Tabs groupId="udon-compiler-language">
+<TabItem value="graph" label="Udon Graph">
+
 ![The Variables window in an Udon Graph shows the variables you've created, and lets you edit their properties.](/img/worlds/index-e057e35-slider-program-variables.png)
+
+In the image above, I've made three different variables, and you can see that I've checked the 'synced' box for the 'sliderValue' variable. The Owner of this GameObject will be in charge of this variable value, and their changes will be sent to everyone else.
+
+</TabItem>
+<TabItem value="cs" label="UdonSharp">
+
+```cs
+[SerializeField] private Slider slider;
+[SerializeField] private Text sliderValueText;
+[SerializeField, UdonSynced] private float sliderValue;
+```
+
+In the code above, I've made three different variables, and you can see that I added the 'UdonSynced' attribute for the 'sliderValue' variable. The Owner of this GameObject will be in charge of this variable value, and their changes will be sent to everyone else.
+
+</TabItem>
+</Tabs>
 
 In the image above, I've made three different variables, and you can see that I've checked the 'synced' box for the 'sliderValue' variable. The Owner of this GameObject will be in charge of this variable value, and their changes will be sent to everyone else.
 
@@ -95,7 +110,20 @@ Others: *sliderValue* updated by VRChat > OnDeserialization triggered > set **UI
 ## Events
 Events happen, and then they're gone. Unlike variables, which can only be updated by the Owner of an object, anyone can call an event on an Object. You can choose to send it to everyone, or just to the owner of that object. This is done by selecting target: All or target: Owner when sending the event.
 
+<Tabs groupId="udon-compiler-language">
+<TabItem value="graph" label="Udon Graph">
+
 ![](/img/worlds/udon-networking-c764485-scne.png)
+
+</TabItem>
+<TabItem value="cs" label="UdonSharp">
+
+```cs
+SendCustomNetworkEvent(NetworkEventTarget.All, "Your custom event name");
+```
+
+</TabItem>
+</Tabs>
 
 ### Example: Bubble Gun
 ![](/img/worlds/udon-networking-33702b1-bubble-gun-shooting.png)
@@ -106,7 +134,7 @@ In our Udon Graph, we have a custom event we call "Trigger" which Plays the 'Spi
 
 To make this happen for everyone, we tie the **OnPickupUseDown** event which is triggered when someone presses Use while holding our Bubble Gun, and we use **SendCustomNetworkEvent** with a target of *All* to fire the "Trigger" event for everyone, including the Owner of the object.
 
-<Tabs>
+<Tabs groupId="udon-compiler-language">
 <TabItem value="graph" label="Udon Graph">
 
 ![Networked pickup particles in the Udon Graph](/img/worlds/udon-networking-e21b3b0-bubble-gun-graph.png)
@@ -176,14 +204,20 @@ Use this to trigger an event for every player currently in the instance, or for 
 
 ### 4. Automatic
 Some VRChat-specific objects are automatically synced. This includes:
-* Avatars: Includes their colliders, voice, and IK movement. 
+* Players: Includes their position, voice, and IK movement. 
 * VRCObjectSync: Includes the Transform and Rigidbody of the object.
 
 ## Object Ownership
-In VRChat, every GameObject is 'owned' by one player (`VRCPlayerApi`) at a time. Only the owner of an object can change its synced Udon variables. Those changes can then be sent to everyone else in the instance. If you want a player to be able to change a variable on an object, make sure to check or request ownership first!
 
-The ownership of an object can be changed with Udon by calling `Networking.SetOwner(VRCPlayerApi player, GameObject obj)`. This will cause every player in the instance to call `OnOwnershipTransferred(VRCPlayerApi player)`, where `player` is a reference to the new owner of the object. The new owner can immediately change synced variables.
-If your script is using manual sync, don't forget to call `RequestSerialization()`.
+In VRChat, every networked GameObject is 'owned' by one [player](/worlds/udon/players/) at a time. Only the owner of an object can change its synced Udon variables or affect its [object sync](/worlds/components/vrc_objectsync/). Those changes can then be sent to everyone else in the instance. If you want a player to be able to change a variable on an object, make sure to check or request ownership first!
+
+The first player to join an instance becomes the instance master. They own all networked objects by default. If that player leaves, a different player becomes the instance master. They will also become the owner of the previous instance master's objects.
+
+When a player picks up [pickup](/worlds/components/vrc_pickup/) with an [object sync](/worlds/components/vrc_objectsync/) component, they will automatically become that object's owner. The owner will continuously send the position of the pickup to other players.
+
+The ownership of an object can be changed with Udon by calling `Networking.SetOwner(VRCPlayerApi player, GameObject obj)`. This will cause every player in the instance to call `OnOwnershipTransferred(VRCPlayerApi player)`, where `player` is a reference to the new owner of the object. The new owner can immediately change synced variables. (If your script is using manual sync, don't forget to call `RequestSerialization()` after changing vairables.)
+
+When a player owns an object, that object may constantly send the synced data to other players, such as the position of that object or synced Udon variables.
 
 ### Requesting Ownership (Advanced)
 
@@ -262,28 +296,56 @@ When syncing behaviours with synced array variables on them - make sure to alway
 
 ## Using Custom Events
 
-:::note Using an Event to fire a change takes 2 steps:
+Udon scripts can trigger custom events for other players in the instance.
 
-1. Add a Custom Event node
-2. Use a SendCustomNetworkEvent node to trigger this event on your target(s).
+<Tabs groupId="udon-compiler-language">
+<TabItem value="graph" label="Udon Graph">
 
-:::
+![Udon graph for an object that disables itself when interacted with.](/img/worlds/udon/networking/custom-event-example-graph.png)
 
-### Add a Custom Event node
-1. Create an "Event Custom" node.
-2. Give this node a unique name using its input box
-3. Add a "Send Custom Network Event Node"
-4. Enter this same event name in the 'eventName' input.
-5. Leave the default 'All' as the target to trigger this event on each Player in your room, or change it to 'Owner' to only fire this event on the Owner.
-6. You can leave the 'instance' input empty to target the current UdonBehaviour, or connect a reference to another UdonBehaviour to fire a Custom Event on that one instead.
+</TabItem>
+<TabItem value="cs" label="UdonSharp">
 
-:::note Editor Shortcut
+```cs
+using UdonSharp;  
+using VRC.Udon.Common.Interfaces;  
+  
+public class SyncedDisableOnInteract : UdonSharpBehaviour  
+{  
+    public override void Interact()  
+    {  
+        SendCustomNetworkEvent(NetworkEventTarget.All, nameof(DisableThisObject));  
+    }  
+      
+    public void DisableThisObject()  
+    {  
+        gameObject.SetActive(false);  
+    }  
+}
+```
 
-SendCustomNetworkEvent will work as a 'SendCustomEvent' node in the Editor to allow for some basic testing.
+</TabItem>
+</Tabs>
 
-:::
+1. Ensure that your UdonBehaviour's sync mode is set to "Continuous" or "Manual", not "None".
+2. Create an "Event Custom" node.
+3. Give this node a unique name using its input box.
+4. Add a "Send Custom Network Event Node."
+5. Enter this same event name in the `eventName` input.
+6. Leave the default `All` as the target to trigger this event on each Player in your room, or change it to `Owner` to only fire this event on the Owner.
+7. You can leave the `instance` input empty to target the current UdonBehaviour, or connect a reference to another UdonBehaviour to fire a Custom Event on that one instead.
+
 ### Local-Only Events
-If you start your Event names with an underscore, you will not be able to call them over the network. We do this to safeguard our internal methods like \_start, \_update, \_interact against malicious network calls. We have plans to add an attribute to events to mark them as 'local-only' without the need for an underscore. If you want to block events from remote execution in the meantime, you can use a unique underscore prefix like '\_u\_eventName' to make sure it doesn't match any existing or future VRC methods.
+If you start your event names with an underscore, you will not be able to call them over the network. Udon does this to safeguard VRChat's internal methods like \_start, \_update, and \_interact against malicious network calls. VRChat plans add an attribute to events to mark them as 'local-only' without the need for an underscore. If you want to block events from remote execution in the meantime, you can use a unique underscore prefix like '\_u\_eventName' to make sure it doesn't match any existing or future VRC methods.
+
+### Event parameters
+
+Udon currently does not support sending events with parameters. There is no way to send events to a specific player (except the master.)
+
+#### Workaround 1
+Give each Player ownership over a GameObject, such that each player now has a single UdonBehaviour that they are associated with. Use Networking.GetOwner(GameObject) to find out which UdonBehaviour to sent the event to to target the specified player. This method is very complex to setup.
+#### Workaround 2
+Use a synced variable (string for displayName or int for playerID) to tell everyone which player is meant. This method however is a little tricky due to the problem with synced variable/network event interactions described further below.
 ## Debugging
 You can view some information about your networked objects in the client if you launch with `--enable-debug-gui` and enter [debug menu 8](/worlds/udon/world-debug-views#debug-menu-8) by pressing `Right Shift` + \`  + `8` while in VRChat.
 These overlays show you

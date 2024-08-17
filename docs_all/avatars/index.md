@@ -5,7 +5,7 @@ sidebar_position: 0
 ---
 # Avatars
 
-VRChatではオリジナルのアバターを作ってアップロードすることができます!
+VRChatではオリジナルのアバターを作ってアップロードすることができます! このカテゴリーでは、VRChatのAvatars 3.0 SDKの使い方を解説します。
 
 # アバター作成
 
@@ -34,7 +34,8 @@ Avatar3.0を理解し使うためには、いくつかの概念を知る必要�
 
 ### Unityシステム
 
-このドキュメントは[Unityアニメーター](https://docs.unity3d.com/2019.4/Documentation/Manual/class-AnimatorController.html)についてある程度の知識があることを前提に書かれています。特に、次の基本的な知識について知っているとよいでしょう。
+このドキュメントは<UnityVersionedLink versionKey="minor" url="https://docs.unity3d.com/<VERSION>/Documentation/Manual/class-AnimatorController.html">Unityアニメーター</UnityVersionedLink>
+についてある程度の知識があることを前提に書かれています。特に、次の基本的な知識について知っているとよいでしょう。
 
 - アニメーターとアニメーション
 - アニメーションレイヤー、レイヤーのweight、ブレンド
@@ -71,7 +72,7 @@ However, even with these basic upgraded systems, there are some new features.
 
 Ever wanted to iterate and test an avatar without uploading it? Well, with Avatars 3.0, now you can!
 
-In the "Builder" tab of VRChat SDK control panel, you can now select "Build & Test" at "Offline Testing" section. When you click this, your avatar will be built, and then copied into a folder.
+In the "Builder" tab of VRChat SDK control panel, you can now select "Build & Test" at "Offline Testing" section. When you click this, your avatar will be built, and then copied into the folder `%LocalAppdata%Low\VRChat\VRChat\Avatars`.
 
 When you launch VRChat, you'll be able to access this avatar locally by looking in the "Other" section of the Avatar menu! Only you will be able to see it, but you can make changes to your avatar, click "Build & Test" again, and after a short build, your avatar will be updated. Simply re-select the avatar in your menu and click "Change" again, and you'll swap into the new testing avatar.
 
@@ -135,7 +136,7 @@ When "Locomotion Animations" is off, locomoting in FBT will NOT play the walking
 
 ### Write Defaults on States
 
-[Write Defaults](https://docs.unity3d.com/2019.4/Documentation/Manual/class-State.html) is an option available on states in Animators in Unity. 
+<UnityVersionedLink versionKey="minor" url="https://docs.unity3d.com/<VERSION>/Documentation/Manual/class-State.html">Write Defaults</UnityVersionedLink> is an option available for each state in an Animator Controller.
 
 Write Defaults "on" will write back the default values of **all animated properties** (_on a Controller-wide basis!_) that are not animated in that particular state. This can cause some very strange interactions if you don't plan for it.
 

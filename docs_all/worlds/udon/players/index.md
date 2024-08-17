@@ -1,9 +1,10 @@
 ---
-title: "Player API"
-excerpt: "Use Udon to retrieve information about players in your world"
 sidebar_position: 1
 ---
-VRCPlayerApiを通じてワールド内のプレイヤーを操作することができます。各プレイヤーはVRCPlayerApiオブジェクトを持っており、プレイヤーが参加/退出する際にそれをリッスンするUdonBehaviorsがOnPlayerJoined / OnPlayerLeftイベントを発火させます。
+# Player API
+Udonを用いて、ワールドのインスタンスにいるプレイヤーの情報を取得することができます。
+
+Udonは、VRCPlayerApiを通じてプレイヤーに作用することができます。。それぞれのプレイヤーはVRCPlayerApiオブジェクトを持っており、各プレイヤーはVRCPlayerApiオブジェクトを持っており、プレイヤーが参加/退出する際にそれをリッスンするUdonBehaviorsがOnPlayerJoined / OnPlayerLeftイベントを発火させます。
 
 このページには、いくつかの一般的なノードに関する情報も含まれています。VRCPlayerApiオブジェクトはできることが非常に多いため、いくつかのノードに関する情報を以下のページに分類しました。
 

@@ -1,3 +1,5 @@
+import UnityVersionedLink from '@site/src/components/UnityVersionedLink.js';
+
 # Network Components
 
 This doc covers Networking Components, Properties and Events you can use in your Udon Programs.
@@ -9,7 +11,7 @@ Special properties you can *get* from Networking:
 | Property name    | Description |
 | ---------------- | ----------- |
 | LocalPlayer      | Returns the [VRC Player API](/worlds/udon/players) object of the local player. |
-| IsInstanceOwner  | Returns `true` if the local player created the world instance. Always `false` in the SDK's "Build & Test" mode. |
+| IsInstanceOwner  | Returns `true` for the instance creator in Invite, Invite+, Friends, and Friends+ instances.<br />Always returns `false` in Group instances, Public instances, and the SDK's "Build & Test" mode. |
 | InstanceOwner    | Returns the [VRC Player API](/worlds/udon/players) object of the player who owns the instance. If the owner is currently not in the instance, this returns `null` instead. If the owner returns, it returns the instance owner again.<br />The instance owner has special moderation permissions. Instance ownership never changes.
 | IsMaster         | Returns `true` if the local player is the [instance master](/worlds/udon/networking/#the-instance-master). The master is the default owner for networked game objects.<br/>You should not use this for security or gating access to your world. Use `IsInstanceOwner` or implement a moderation system instead. |
 | Master           | Returns the [VRC Player API](/worlds/udon/players) object of the player who is the current instance master. Is always valid. |
@@ -41,7 +43,7 @@ Same as OnDeserialization, but with additional information about the time at whi
 - `sendTime`: The time in seconds at which this message was sent.
 - `receiveTime`: The time in seconds at which this message was received.
 
-Both `sendTime` and `receiveTime` measure based on the time in seconds since VRChat has started, from your perspective (see [Time.realtimeSinceStartup](https://docs.unity3d.com/2019.4/Documentation/ScriptReference/Time-realtimeSinceStartup.html)). This means that if you want to know how many seconds ago a certain Deserialization was sent, you can calculate it with `Time.realtimeSinceStartup - sendTime`.
+Both `sendTime` and `receiveTime` measure based on the time in seconds since VRChat has started, from your perspective (see <UnityVersionedLink versionKey="minor" url="https://docs.unity3d.com/<VERSION>/Documentation/ScriptReference/Time-realtimeSinceStartup.html">Time.realtimeSinceStartup</UnityVersionedLink>). This means that if you want to know how many seconds ago a certain Deserialization was sent, you can calculate it with `Time.realtimeSinceStartup - sendTime`.
 
 Note that every user's `Time.realtimeSinceStartup` is different, so one player's `sendTime` is going to be different from another player's `sendTime`. As a result, if you want to sync a specific `sendTime` to other players, you will need to calculate its offset by subtracting your `Time.realtimeSinceStartup`. Then, when the other players receive that offset, they can add back their own `Time.realtimeSinceStartup` to the offset in order to determine the absolute time relative to their own clock.
 
