@@ -27,7 +27,7 @@ sidebar_position: 4
 
 このリストは変更される可能性があることに注意してください。また、以下は含まれていません。
 - 小規模な予定変更
-- [Creator Companion](https://vcc.docs.vrchat.com/)の変更
+- [Creator Companion](/vcc)の変更
 - ドキュメントの変更
 - まだ発表されていない機能
 

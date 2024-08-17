@@ -7,30 +7,30 @@ const FeatureList = [
     {
         title: 'Getting Started',
         imageUrl: require('@site/static/img/homepage/ill-overview.png').default,
-        link: '/getting-started',
+        link: 'getting-started',
         description: (
             <>
-                For new and experienced creators.
+                初心者と熟練者の方へ。
             </>
         ),
     },
     {
         title: 'Worlds',
         imageUrl: require('@site/static/img/homepage/ill-worlds.png').default,
-        link: '/worlds',
+        link: 'worlds',
         description: (
             <>
-                Build simple to complex experiences and hangouts.
+                シンプルなワールドから複雑なワールドまで。
             </>
         ),
     },
     {
         title: 'Avatars',
         imageUrl: require('@site/static/img/homepage/ill-avatars.png').default,
-        link: '/avatars',
+        link: 'avatars',
         description: (
             <>
-                Express yourself with a wide range of customization.
+                高い自由度をもつアバターシステムで自分を表現しよう。
             </>
         ),
     },
