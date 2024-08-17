@@ -14,27 +14,32 @@
               "players": [
                 "index"
               ]
-            }
-          ]
-        },
-        {
-          "udonSharp": [
-            "index",
-            {
-              "Documentation": [
-                "UdonSharp",
-                "VRChat-API"
-              ]
             },
             {
-              "Extra": [
-                "runtime-exception-debugging"
-              ]
-            },
-            {
-              "Getting-Started": [
-                "Community-Resources",
-                "examples"
+              "udonSharp": [
+                {
+                  "legacy-docs": [
+                    "index",
+                    "UdonSharp",
+                    {
+                      "Documentation": [
+                        "UdonSharp",
+                        "VRChat-API"
+                      ]
+                    },
+                    {
+                      "Extra": [
+                        "runtime-exception-debugging"
+                      ]
+                    },
+                    {
+                      "Getting-Started": [
+                        "Community-Resources",
+                        "examples"
+                      ]
+                    }
+                  ]
+                }
               ]
             }
           ]
