@@ -20,4 +20,5 @@ yarn-debug.log*
 yarn-error.log*
 
 /.docs
-updaterPID.txt
+/pwsh/updaterPID.txt
+/pwsh/updater.log

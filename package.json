@@ -1,11 +1,10 @@
 {
   "name": "docs-ja",
-  "version": "0.0.0",
   "private": true,
   "scripts": {
     "docusaurus": "docusaurus",
-    "prestart": "powershell -ExecutionPolicy Bypass -File ./predeploy.ps1",
-    "start": "powershell -ExecutionPolicy Bypass -File ./start.ps1",
+    "prestart": "powershell -ExecutionPolicy Bypass -Command \"$env:PROJECT_ROOT=$(Resolve-Path .); ./pwsh/predeploy.ps1\"",
+    "start": "powershell -ExecutionPolicy Bypass -Command \"$env:PROJECT_ROOT=$(Resolve-Path .); ./pwsh/start.ps1\"",
     "build": "docusaurus build",
     "swizzle": "docusaurus swizzle",
     "deploy": "docusaurus deploy",

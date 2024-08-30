@@ -1,8 +1,14 @@
+# Description: This script is used to copy markdown files from the docs_all directory to the .docs directory when `npm start` is executed.
+
 param (
     [switch]$logging = $false
 )
 
-# 与えられたパスを構成するディレクトリが存在しない場合に作成
+$projectRoot = [System.Environment]::GetEnvironmentVariable('PROJECT_ROOT')
+$dotdocsPath = "$projectRoot\.docs"
+$deployTargetPath = "$PSScriptRoot\deploy-target.json"
+
+# Creates the directory that make up the given path if it does not exist
 function MakeDirectoryIfNotExists {
     param (
         [string]$dirpath
@@ -17,7 +23,7 @@ function MakeDirectoryIfNotExists {
     }
 }
 
-# JSONデータを解析してコピー操作を実行
+# Parse the JSON data and perform the copy operation
 function CopyFilesFromJson {
     param (
         [string]$path,
@@ -30,12 +36,12 @@ function CopyFilesFromJson {
 
 
         if ($value -is [PSCustomObject]) {
-            # 再帰的にディレクトリを探索
+            # Recursively search directory
             CopyFilesFromJson -path $newPath -data $value
         }
 
         elseif ($value -is [System.Collections.ArrayList] -or $value -is [System.Object[]]) {
-            # リスト内にはハッシュテーブルも含まれている可能性があるので、ファイル名文字列のみを抽出
+            # The list may also contain hash tables, so extract only the file name strings
             $stringvalue = $value | Where-Object { $_ -is [String]}
 
             foreach ($s in $stringvalue) {
@@ -54,7 +60,7 @@ function CopyFilesFromJson {
 
             foreach ($v in $value) {
                 if ($v -is [PSCustomObject]) {
-                    # 再帰的にディレクトリを探索
+                    # Recursively search directory
                     CopyFilesFromJson -path $newPath -data $v
                 }
             }
@@ -62,21 +68,21 @@ function CopyFilesFromJson {
     }
 }
 
-if (Test-Path "$PSScriptRoot\.docs") {
-    Remove-Item -Path "$PSScriptRoot\.docs" -Recurse -Force
+if (Test-Path "$dotdocsPath") {
+    Remove-Item -Path "$dotdocsPath" -Recurse -Force
     if ($logging -eq $true) {
         Write-Host -ForegroundColor Green ".docs directory initialized"
     }
-    New-Item -ItemType Directory -Force -Path "$PSScriptRoot\.docs" | Out-Null
-    Set-ItemProperty -Path "$PSScriptRoot\.docs" -Name "Attributes" -Value ([System.IO.FileAttributes]::Hidden)
+    New-Item -ItemType Directory -Force -Path "$dotdocsPath" | Out-Null
+    Set-ItemProperty -Path "$dotdocsPath" -Name "Attributes" -Value ([System.IO.FileAttributes]::Hidden)
     if ($logging -eq $true) {
         Write-Host -ForegroundColor Green ".docs directory made & hidden"
     }
 }
 
-# copy-target.ymlを読み込んで、ファイルをコピー
-$jsonData = ConvertFrom-Json ((Get-Content (Join-Path $PSScriptRoot "deploy-target.json")) -join "`n")
+# Read copy-target.yml and copy the files
+$jsonData = ConvertFrom-Json ((Get-Content $deployTargetPath) -join "`n")
 if ($logging -eq $true) {
     Write-Host -ForegroundColor Green "Copy markdown files"
 }
-CopyFilesFromJson -path "$PSScriptRoot" -data $jsonData
+CopyFilesFromJson -path "$projectRoot" -data $jsonData
