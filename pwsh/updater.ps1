@@ -75,6 +75,7 @@ Try {
     }
 }
 Finally {
+
     # Remove the event when Ctrl+C is pressed
     Write-Log "Unregister the monitoring event and terminate myself. GoodBye!"
     Remove-Job -Id $job.Id -Force

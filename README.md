@@ -1,8 +1,11 @@
 Github Pages: https://horo5502.github.io/creator-docs_ja/
 
-# What is this?
+# Creator-Docs_ja
 [VRChat公式クリエイタードキュメント](https://creators.vrchat.com/)を**非公式に**翻訳したものです。  
-翻訳途中なので、まだ翻訳されていないページもあります。未翻訳のページは404NotFoundが表示されます。
+翻訳途中なので、まだ翻訳されていないページもあります。未翻訳のページには404NotFoundが表示されます。
+
+<!-- 新規翻訳の貢献を受け入れています! 詳細は[こちら](https://horo5502.github.io/creator-docs_ja/how-to-contribute/)から。 -->
+現在、管理者が忙しいため新規翻訳やドキュメントの更新はストップしています。
 
 公式ドキュメントのGithubリポジトリ:  
 Creator Docs  
