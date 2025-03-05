@@ -1,3 +1,9 @@
+# 公式リポジトリが統合されつつあるため、このリポジトリはアーカイブとし、単に公式リポジトリをフォークしたものを新たに用いることとします。
+# 移行先: https://github.com/Horo5502/creator-docs-ja
+
+---
+---
+---
 Github Pages: https://horo5502.github.io/creator-docs_ja/
 
 # Creator-Docs_ja
